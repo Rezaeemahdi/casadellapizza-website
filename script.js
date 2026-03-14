@@ -61,104 +61,6 @@ breakpoints:{
 
 
 
-/* ===================================== */
-/* LANGUAGE SYSTEM                       */
-/* ===================================== */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-    const switchBtn = document.getElementById("language-switch");
-    
-    /* default language */
-    
-    let language = localStorage.getItem("site-language") || "en";
-    
-    /* set switch state */
-    
-    if(language === "it"){
-    switchBtn.checked = true;
-    translateToItalian();
-    }
-    
-    /* switch language */
-    
-    switchBtn.addEventListener("change", function(){
-    
-    if(this.checked){
-    localStorage.setItem("site-language","it");
-    }else{
-    localStorage.setItem("site-language","en");
-    }
-    
-    location.reload();
-    
-    });
-    
-    });
-    
-    
-    /* ===================================== */
-    /* TRANSLATE PAGE TO ITALIAN             */
-    /* ===================================== */
-    
-    function translateToItalian(){
-    
-    /* Navigation */
-    
-    replaceText("Home","Home");
-    replaceText("About","Chi siamo");
-    replaceText("Menu","Menu");
-    replaceText("Contact","Contatti");
-    
-    /* Sections */
-    
-    replaceText("About Us","Chi siamo");
-    replaceText("Our Menu","Il nostro menu");
-    replaceText("Contact Us","Contattaci");
-    
-    /* Buttons */
-    
-    replaceText("Order Now","Ordina ora");
-    replaceText("Send Message","Invia messaggio");
-    replaceText("Checkout","Conferma ordine");
-    
-    /* Order system */
-    
-    replaceText("Order Summary","Riepilogo ordine");
-    replaceText("Pickup","Ritiro");
-    replaceText("Delivery","Consegna");
-    replaceText("Total","Totale");
-    replaceText("Time","Orario");
-    
-    /* Contact form */
-    
-    replaceText("Your name","Il tuo nome");
-    replaceText("Your email","La tua email");
-    replaceText("Your message","Il tuo messaggio");
-    
-    }
-    
-    
-    /* ===================================== */
-    /* TEXT REPLACER                         */
-    /* ===================================== */
-    
-    function replaceText(original,translation){
-    
-    document.querySelectorAll("*").forEach(element=>{
-    
-    if(element.children.length === 0){
-    
-    if(element.textContent.trim() === original){
-    element.textContent = translation;
-    }
-    
-    }
-    
-    });
-    
-    }
-
 
 
 /* ===================================================== */
@@ -534,6 +436,10 @@ window.open(`https://wa.me/393933901705?text=${message}`)
 
 
 
+
+
+
+
 /* ===================================================== */
 /* CONTACT FORM → WHATSAPP                               */
 /* ===================================================== */
@@ -612,4 +518,106 @@ document.getElementById("doorbell-field").style.display="block"
 }
 
 }
+
+
+
+
+/* ===================================== */
+/* LANGUAGE SYSTEM                       */
+/* ===================================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const switchBtn = document.getElementById("language-switch");
+    
+    /* default language */
+    
+    let language = localStorage.getItem("site-language") || "en";
+    
+    /* set switch state */
+    
+    if(language === "it"){
+    switchBtn.checked = true;
+    translateToItalian();
+    }
+    
+    /* switch language */
+    
+    switchBtn.addEventListener("change", function(){
+    
+    if(this.checked){
+    localStorage.setItem("site-language","it");
+    }else{
+    localStorage.setItem("site-language","en");
+    }
+    
+    location.reload();
+    
+    });
+    
+    });
+    
+    
+    /* ===================================== */
+    /* TRANSLATE PAGE TO ITALIAN             */
+    /* ===================================== */
+    
+    function translateToItalian(){
+    
+    /* Navigation */
+    
+    replaceText("Home","Home");
+    replaceText("About","Chi siamo");
+    replaceText("Menu","Menu");
+    replaceText("Contact","Contatti");
+    
+    /* Sections */
+    
+    replaceText("About Us","Chi siamo");
+    replaceText("Our Menu","Il nostro menu");
+    replaceText("Contact Us","Contattaci");
+    
+    /* Buttons */
+    
+    replaceText("Order Now","Ordina ora");
+    replaceText("Send Message","Invia messaggio");
+    replaceText("Checkout","Conferma ordine");
+    
+    /* Order system */
+    
+    replaceText("Order Summary","Riepilogo ordine");
+    replaceText("Pickup","Ritiro");
+    replaceText("Delivery","Consegna");
+    replaceText("Total","Totale");
+    replaceText("Time","Orario");
+    
+    /* Contact form */
+    
+    replaceText("Your name","Il tuo nome");
+    replaceText("Your email","La tua email");
+    replaceText("Your message","Il tuo messaggio");
+    
+    }
+    
+    
+    /* ===================================== */
+    /* TEXT REPLACER                         */
+    /* ===================================== */
+    
+    function replaceText(original,translation){
+    
+    document.querySelectorAll("*").forEach(element=>{
+    
+    if(element.children.length === 0){
+    
+    if(element.textContent.trim() === original){
+    element.textContent = translation;
+    }
+    
+    }
+    
+    });
+    
+    }
+
 
