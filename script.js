@@ -59,6 +59,72 @@ breakpoints:{
 
 
 
+/* ============================= */
+/* LANGUAGE SWITCH SYSTEM        */
+/* ============================= */
+
+const langSwitch = document.getElementById("language-switch");
+
+/* Load saved language */
+
+let savedLang = localStorage.getItem("language") || "it";
+
+/* Set switch position */
+
+if(savedLang === "en"){
+langSwitch.checked = true;
+}
+
+/* Change language */
+
+langSwitch.addEventListener("change", function(){
+
+if(this.checked){
+localStorage.setItem("language","en");
+}else{
+localStorage.setItem("language","it");
+}
+
+/* refresh page */
+
+location.reload();
+
+});
+
+
+/* ============================= */
+/* TEXT TRANSLATIONS             */
+/* ============================= */
+
+const texts = {
+
+    it:{
+    about:"Chi siamo",
+    contact:"Contattaci",
+    menu:"Il Nostro Menu",
+    order:"Ordina Ora"
+    },
+    
+    en:{
+    about:"About Us",
+    contact:"Contact Us",
+    menu:"Our Menu",
+    order:"Order Now"
+    }
+    
+    };
+    
+    const lang = localStorage.getItem("language") || "it";
+    
+    /* Apply translations */
+    
+    document.querySelector(".about-title").innerText = texts[lang].about;
+
+
+
+
+
+    
 /* ===================================================== */
 /* MENU POPUP PANEL                                      */
 /* ===================================================== */
@@ -510,69 +576,3 @@ document.getElementById("doorbell-field").style.display="block"
 }
 
 }
-
-
-
-
-
-
-/* ============================= */
-/* LANGUAGE SWITCH SYSTEM        */
-/* ============================= */
-
-const langSwitch = document.getElementById("language-switch");
-
-/* Load saved language */
-
-let savedLang = localStorage.getItem("language") || "it";
-
-/* Set switch position */
-
-if(savedLang === "en"){
-langSwitch.checked = true;
-}
-
-/* Change language */
-
-langSwitch.addEventListener("change", function(){
-
-if(this.checked){
-localStorage.setItem("language","en");
-}else{
-localStorage.setItem("language","it");
-}
-
-/* refresh page */
-
-location.reload();
-
-});
-
-
-/* ============================= */
-/* TEXT TRANSLATIONS             */
-/* ============================= */
-
-const texts = {
-
-    it:{
-    about:"Chi siamo",
-    contact:"Contattaci",
-    menu:"Il Nostro Menu",
-    order:"Ordina Ora"
-    },
-    
-    en:{
-    about:"About Us",
-    contact:"Contact Us",
-    menu:"Our Menu",
-    order:"Order Now"
-    }
-    
-    };
-    
-    const lang = localStorage.getItem("language") || "it";
-    
-    /* Apply translations */
-    
-    document.querySelector(".about-title").innerText = texts[lang].about;
