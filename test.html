@@ -49,6 +49,7 @@
                 <li class="nave-item">
                     <a href="#contact" class="nav-link">Contacts</a>
                 </li>
+                <div id="google_translate_element"></div>
 
 
                 <div class="language-toggle">
@@ -62,7 +63,7 @@
                     <span>IT</span>
                   </div>
 
-                  
+
             </ul>
             <button id="menu-open-button" class="fas fa-bars"></button>
 
@@ -451,6 +452,21 @@
     <script src="script.js">
     </script>
 
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+    {
+    pageLanguage: 'en',
+    includedLanguages: 'en,it',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+    );
+    }
+    </script>
+    
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
