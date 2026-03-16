@@ -432,6 +432,8 @@ message+=`Doorbell: ${doorbell}%0A`
 
 window.open(`https://wa.me/393933901705?text=${message}`)
 
+document.getElementById("order-success").classList.add("active");
+
 }
 
 
@@ -625,3 +627,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     });
+
+
+    function closeSuccess(){
+
+        document.getElementById("order-success").classList.remove("active");
+        
+        cart = [];
+        updateCart();
+        
+        }
