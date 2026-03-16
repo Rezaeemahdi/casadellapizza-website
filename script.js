@@ -516,20 +516,112 @@ document.getElementById("doorbell-field").style.display="block"
 
 
 }
+
 }
 
 
-const langToggle = document.getElementById("langToggle");
 
-langToggle.addEventListener("change", function(){
+const toggle = document.getElementById("language-toggle");
 
-let lang = this.checked ? "it" : "en";
 
-let select = document.querySelector(".goog-te-combo");
+function changeLanguage(lang){
+
+localStorage.setItem("site-language", lang);
+
+const interval = setInterval(function(){
+
+const select = document.querySelector(".goog-te-combo");
 
 if(select){
+
 select.value = lang;
 select.dispatchEvent(new Event("change"));
+
+clearInterval(interval);
+
+}
+
+},100);
+
+}
+
+
+/* detect saved or browser language */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+let saved = localStorage.getItem("site-language");
+
+if(!saved){
+
+let browserLang = navigator.language || navigator.userLanguage;
+
+if(browserLang.startsWith("it")){
+saved = "it";
+}else{
+saved = "en";
+}
+
+}
+
+if(saved === "it"){
+toggle.checked = true;
+changeLanguage("it");
+}else{
+changeLanguage("en");
 }
 
 });
+
+
+/* toggle click */
+
+toggle.addEventListener("change", function(){
+
+if(this.checked){
+changeLanguage("it");
+}else{
+changeLanguage("en");
+}
+
+});
+
+
+
+
+/* =============================== */
+/* ORDER TIME DROPDOWN GENERATOR   */
+/* =============================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const timeSelect = document.getElementById("order-time");
+    
+    if(!timeSelect) return;
+    
+    let startHour = 18;
+    let endHour = 22;
+    
+    for(let hour = startHour; hour <= endHour; hour++){
+    
+    for(let min = 0; min < 60; min += 15){
+    
+    if(hour === endHour && min > 0) break;
+    
+    let h = hour.toString().padStart(2,'0');
+    let m = min.toString().padStart(2,'0');
+    
+    let time = `${h}:${m}`;
+    
+    let option = document.createElement("option");
+    
+    option.value = time;
+    option.textContent = time;
+    
+    timeSelect.appendChild(option);
+    
+    }
+    
+    }
+    
+    });

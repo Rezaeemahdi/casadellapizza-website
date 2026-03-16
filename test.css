@@ -1007,3 +1007,117 @@ display:none;
     input:checked + .slider:before{
     transform:translateX(22px);
     }
+
+
+
+    .language-switch{
+        display:flex;
+        gap:6px;
+        margin-left:15px;
+        }
+        
+        .language-switch button{
+        
+        background:transparent;
+        border:1px solid white;
+        color:white;
+        padding:5px 10px;
+        font-size:13px;
+        border-radius:4px;
+        cursor:pointer;
+        }
+        
+        .language-switch button.active{
+        background:white;
+        color:black;
+        }
+
+
+        .goog-te-banner-frame{
+            display:none !important;
+            }
+            
+            .goog-te-gadget{
+            display:none !important;
+            }
+            
+            body{
+            top:0px !important;
+            }
+
+
+
+            /* Hide Google Translate bar completely */
+
+.goog-te-banner-frame.skiptranslate{
+    display:none !important;
+    }
+    
+    body{
+    top:0px !important;
+    }
+    
+    iframe.skiptranslate{
+    display:none !important;
+    }
+
+
+    .header-controls{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        }
+        
+        .language-toggle{
+        display:flex;
+        align-items:center;
+        gap:6px;
+        font-size:13px;
+        }
+        
+        /* toggle switch */
+        
+        .switch{
+        position:relative;
+        display:inline-block;
+        width:42px;
+        height:22px;
+        }
+        
+        .switch input{
+        opacity:0;
+        width:0;
+        height:0;
+        }
+        
+        .slider{
+        position:absolute;
+        cursor:pointer;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background:#ccc;
+        transition:0.3s;
+        border-radius:30px;
+        }
+        
+        .slider:before{
+        position:absolute;
+        content:"";
+        height:16px;
+        width:16px;
+        left:3px;
+        bottom:3px;
+        background:white;
+        transition:0.3s;
+        border-radius:50%;
+        }
+        
+        input:checked + .slider{
+        background:#e74c3c;
+        }
+        
+        input:checked + .slider:before{
+        transform:translateX(20px);
+        }
