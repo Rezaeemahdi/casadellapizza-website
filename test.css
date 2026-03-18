@@ -1154,7 +1154,8 @@ width:calc(100% / 3 - 60px);
     
 
 .navbar #menu-close-button {
-    position: block; right: 30px; top: 30px; }
+    position: block; right: 30px; top: 30px;
+color: white; }
 
 .navbar #menu-open-button { 
     color:white }
