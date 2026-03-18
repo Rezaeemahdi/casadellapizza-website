@@ -63,6 +63,8 @@ breakpoints:{
 
 
 
+
+
 /* ===================================================== */
 /* MENU POPUP PANEL                                      */
 /* ===================================================== */
@@ -294,7 +296,7 @@ cartBtn.classList.remove("cart-bounce")
 
 const summary=document.getElementById("order-summary")
 
-let summaryHTML="<h4>Order Summary</h4>"
+let summaryHTML="<h4> Order Summary</h4>"
 
 cart.forEach(item=>{
 summaryHTML+=`${item.qty}x ${item.name}<br>`
@@ -381,6 +383,7 @@ document.getElementById("order-confirmation").classList.add("active")
 
 
 
+
 /* Close confirmation popup */
 
 function closeConfirmation(){
@@ -391,52 +394,103 @@ document.getElementById("order-confirmation").classList.remove("active")
 
 
 
+
 /* ===================================================== */
 /* WHATSAPP ORDER                                        */
 /* ===================================================== */
 
 function sendWhatsAppOrder(){
 
-let message="Casa Della Pizza Order %0A%0A"
-
-let total=0
-
-cart.forEach(item=>{
-message+=`${item.qty}x ${item.name} - €${(item.price*item.qty).toFixed(2)}%0A`
-total+=item.price*item.qty
-})
-
-message+=`%0ATotal: €${total.toFixed(2)}%0A%0A`
-
-const orderType=document.getElementById("order-type").value
-const time=document.getElementById("order-time").value
-const name=document.getElementById("customer-name").value
-const phone=document.getElementById("customer-phone").value
-const address=document.getElementById("customer-address").value
-const doorbell=document.getElementById("customer-doorbell").value
-const note=document.getElementById("order-note").value
-
-message+=`Order Type: ${orderType}%0A`
-message+=`Time: ${time}%0A`
-message+=`Name: ${name}%0A`
-message+=`Phone: ${phone}%0A`
-
-if(note){
-message+=`Note: ${note}%0A`
-}
-
-if(orderType==="delivery"){
-message+=`Address: ${address}%0A`
-message+=`Doorbell: ${doorbell}%0A`
-}
-
-window.open(`https://wa.me/393933901705?text=${message}`)
-
-document.getElementById("order-success").classList.add("active");
-
-}
-
-
+    let lang = localStorage.getItem("lang") || "en";
+    
+    /* ================= TEXTS ================= */
+    
+    let T = {
+    en: {
+    title: "Casa Della Pizza Order",
+    total: "Total",
+    type: "Order Type",
+    time: "Time",
+    name: "Name",
+    phone: "Phone",
+    address: "Address",
+    doorbell: "Doorbell",
+    note: "Note",
+    pickup: "Pickup",
+    delivery: "Delivery"
+    },
+    it: {
+    title: "Ordine Casa Della Pizza",
+    total: "Totale",
+    type: "Tipo di ordine",
+    time: "Orario",
+    name: "Nome",
+    phone: "Telefono",
+    address: "Indirizzo",
+    doorbell: "Campanello",
+    note: "Nota",
+    pickup: "Ritiro",
+    delivery: "Consegna"
+    }
+    };
+    
+    let t = T[lang];
+    
+    /* ================= ORDER ================= */
+    
+    let message = `*${t.title}*%0A%0A`;
+    
+    let total = 0;
+    
+    cart.forEach(item=>{
+    message += `• ${item.qty}x ${item.name} - €${(item.price * item.qty).toFixed(2)}%0A`;
+    total += item.price * item.qty;
+    });
+    
+    message += `%0A*${t.total}: €${total.toFixed(2)}*%0A%0A`;
+    
+    /* ================= CUSTOMER ================= */
+    
+    const orderType = document.getElementById("order-type").value;
+    const time = document.getElementById("order-time").value;
+    const name = document.getElementById("customer-name").value;
+    const phone = document.getElementById("customer-phone").value;
+    const address = document.getElementById("customer-address").value;
+    const doorbell = document.getElementById("customer-doorbell").value;
+    const note = document.getElementById("order-note").value;
+    
+    /* translate pickup/delivery */
+    let typeText = orderType === "delivery" ? t.delivery : t.pickup;
+    
+    message += ` *${t.type}:* ${typeText}%0A`;
+    message += ` *${t.time}:* ${time}%0A`;
+    message += ` *${t.name}:* ${name}%0A`;
+    message += ` ${t.phone}: ${phone}%0A`;
+    
+    if(orderType === "delivery"){
+    message += ` *${t.address}:* ${address}%0A`;
+    message += ` *${t.doorbell}:* ${doorbell}%0A`;
+    }
+    
+    if(note){
+    message += ` *${t.note}:* ${note}%0A`;
+    }
+    
+    /* ================= SEND ================= */
+    
+    window.open(`https://wa.me/393933901705?text=${message}`, "_blank");
+    
+    /* ================= SUCCESS POPUP ================= */
+    
+    document.getElementById("order-success").classList.add("active");
+    
+    /* OPTIONAL: AUTO RESET AFTER SEND */
+    setTimeout(()=>{
+    cart = [];
+    updateCart();
+    }, 1000);
+    
+    }
 
 
 
@@ -478,15 +532,16 @@ this.reset()
 const orderType=document.getElementById("order-type")
 const addressField=document.getElementById("address-field")
 
-orderType.addEventListener("change",function(){
+document.getElementById("order-type").addEventListener("change",function(){
 
-if(orderType.value==="delivery"){
-addressField.style.display="block"
-}else{
-addressField.style.display="none"
-}
+    if(this.value==="delivery"){
+    addressField.style.display="block"
+    }else{
+    addressField.style.display="none"
+    }
+    
+    });
 
-})
 
 
 
@@ -523,117 +578,183 @@ document.getElementById("doorbell-field").style.display="block"
 
 
 
-const toggle = document.getElementById("language-toggle");
-
-
-function changeLanguage(lang){
-
-localStorage.setItem("site-language", lang);
-
-const interval = setInterval(function(){
-
-const select = document.querySelector(".goog-te-combo");
-
-if(select){
-
-select.value = lang;
-select.dispatchEvent(new Event("change"));
-
-clearInterval(interval);
-
-}
-
-},100);
-
-}
-
-
 /* detect saved or browser language */
 
 document.addEventListener("DOMContentLoaded", function(){
 
-let saved = localStorage.getItem("site-language");
-
-if(!saved){
-
-let browserLang = navigator.language || navigator.userLanguage;
-
-if(browserLang.startsWith("it")){
-saved = "it";
-}else{
-saved = "en";
-}
-
-}
-
-if(saved === "it"){
-toggle.checked = true;
-changeLanguage("it");
-}else{
-changeLanguage("en");
-}
-
-});
-
-
-/* toggle click */
-
-toggle.addEventListener("change", function(){
-
-if(this.checked){
-changeLanguage("it");
-}else{
-changeLanguage("en");
-}
-
-});
-
-
-
-
-/* =============================== */
-/* ORDER TIME DROPDOWN GENERATOR   */
-/* =============================== */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-    const timeSelect = document.getElementById("order-time");
+    let saved = localStorage.getItem("site-language");
     
-    if(!timeSelect) return;
+    if(!saved){
     
-    let startHour = 18;
-    let endHour = 22;
+    let browserLang = navigator.language || navigator.userLanguage;
     
-    for(let hour = startHour; hour <= endHour; hour++){
-    
-    for(let min = 0; min < 60; min += 15){
-    
-    if(hour === endHour && min > 0) break;
-    
-    let h = hour.toString().padStart(2,'0');
-    let m = min.toString().padStart(2,'0');
-    
-    let time = `${h}:${m}`;
-    
-    let option = document.createElement("option");
-    
-    option.value = time;
-    option.textContent = time;
-    
-    timeSelect.appendChild(option);
-    
+    if(browserLang.startsWith("it")){
+    saved = "it";
+    }else{
+    saved = "en";
     }
     
     }
+    
+    if(saved === "it"){
+        langToggle.checked = true;
+        changeLanguage("it");
+        }else{
+        langToggle.checked = false;
+        changeLanguage("en");
+        }
     
     });
-
-
+    
+    
     function closeSuccess(){
 
+        /* 1. Close ALL popups */
         document.getElementById("order-success").classList.remove("active");
+        document.getElementById("order-confirmation").classList.remove("active");
+        document.getElementById("cart-window").classList.remove("active");
         
+        
+        /* 2. Clear cart */
         cart = [];
         updateCart();
         
+        
+        /* 3. Reset form fields */
+        document.getElementById("customer-name").value = "";
+        document.getElementById("customer-phone").value = "";
+        document.getElementById("customer-address").value = "";
+        document.getElementById("customer-doorbell").value = "";
+        document.getElementById("order-note").value = "";
+        document.getElementById("order-time").value = "";
+        
+        
+        /* 4. Reset order type to Pickup */
+        setOrderType("pickup");
+        
+        
+        /* 5. Reset contact form (important) */
+        const contactForm = document.getElementById("contact-form");
+        if(contactForm){
+        contactForm.reset();
         }
+        
+        
+        /* 6. Reset order summary */
+        document.getElementById("order-summary").innerHTML = "";
+        document.getElementById("confirmation-summary").innerHTML = "";
+        
+        
+        /* 7. Scroll to top smoothly */
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+        });
+        
+        
+        /* 8. Small animation feedback (optional but nice) */
+        document.body.classList.add("reset-flash");
+        
+        setTimeout(()=>{
+        document.body.classList.remove("reset-flash");
+        },300);
+        
+        }
+        
+
+
+    
+    
+    
+            const toggle = document.getElementById("lang-toggle");
+    
+            /* Apply language */
+            function setLanguage(lang){
+    
+                localStorage.setItem("lang", lang);
+                
+                document.querySelectorAll("[data-en]").forEach(el=>{
+                el.innerText = el.getAttribute(`data-${lang}`);
+                });
+
+                /* PLACEHOLDERS */
+document.querySelectorAll("[data-en-placeholder]").forEach(el=>{
+    el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+    });
+    
+                
+                updatePlaceholders(lang);
+                }
+            
+            /* Toggle switch */
+            toggle.addEventListener("change", function(){
+            if(this.checked){
+            setLanguage("it");
+            }else{
+            setLanguage("en");
+            }
+            });
+            
+            /* Load saved language */
+            document.addEventListener("DOMContentLoaded", ()=>{
+            
+            let lang = localStorage.getItem("lang");
+            
+            /* auto detect first time */
+            if(!lang){
+            lang = navigator.language.startsWith("it") ? "it" : "en";
+            }
+            
+            if(lang === "it"){
+            toggle.checked = true;
+            }
+            
+            setLanguage(lang);
+            
+            });
+    
+    
+
+/* ===== SCROLL ANIMATION ===== */
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+    if(entry.isIntersecting){
+    entry.target.classList.add("show");
+    }
+    });
+    },{
+    threshold: 0.2
+    });
+    
+    document.querySelectorAll(".reveal").forEach(el=>{
+    observer.observe(el);
+    });
+
+/* ===== ULTRA SMOOTH SCROLL ===== */
+
+const lenis = new Lenis({
+    duration: 1.2,
+    smooth: true
+    });
+    
+    function raf(time){
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+
+
+/* ===== PARALLAX EFFECT ===== */
+
+window.addEventListener("scroll", () => {
+
+    const scrolled = window.scrollY;
+    
+    document.querySelectorAll(".parallax").forEach(el=>{
+    let speed = el.getAttribute("data-speed") || 0.3;
+    el.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+    
+    });

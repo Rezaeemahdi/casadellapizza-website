@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale=1.0">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+
     <title>Casa Della Pizza</title>
 
     <link rel="stylesheet" href="test.css">
@@ -17,7 +21,7 @@
 
 <body>
 
-    <div id="google_translate_element" style="display:none;"></div>
+
     <!-- Header / Navbar-->
     <header>
         <nav class="navbar section-content">
@@ -31,26 +35,27 @@
 
                 <li class="nave-item">
 
-                    <a href="#"  class="nav-link  , notranslate">Home</a>
+                    <a href="#" class="nav-link notranslate" data-en="Home" data-it="Home">Home</a>
                 </li>
 
                 <li class="nave-item">
-                    <a href="#about" class="nav-link">About us</a>
+                    <a href="#about" class="nav-link" data-en="About us" data-it="Chi siamo">About us</a>
                 </li>
 
                 <li class="nave-item">
-                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#menu" class="nav-link" data-en="Menu" data-it="Menu">Menu</a>
                 </li>
 
                 <li class="nave-item">
-                    <a href="#reviews" class="nav-link">Feedbacks</a>
+                    <a href="#reviews" class="nav-link" data-en="Feedbacks" data-it="Recensioni">Feedbacks</a>
+
                 </li>
                 <li class="nave-item">
-                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#gallery" class="nav-link" data-en="Gallery" data-it="Galleria">Gallery</a>
                 </li>
 
                 <li class="nave-item">
-                    <a href="#contact" class="nav-link">Contacts</a>
+                    <a href="#contact" class="nav-link" data-en="Contacts" data-it="Contatti">Contacts</a>
                 </li>
             </ul>
 
@@ -59,18 +64,14 @@
                 
                 </div>
 
-                <div class="language-toggle">
-
+                <div class="lang-switch">
                     <span>EN</span>
-                    
                     <label class="switch">
-                    <input type="checkbox" id="language-toggle">
-                    <span class="slider"></span>
+                      <input type="checkbox" id="lang-toggle">
+                      <span class="slider"></span>
                     </label>
-                    
                     <span>IT</span>
-                    
-                    </div>
+                  </div>
             <button id="menu-open-button" class="fas fa-bars"></button>
 
           
@@ -79,17 +80,29 @@
 
     <main>
         <!--hero section-->
-        <section class="hero-section">
+        <section class="hero-section reveal">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/Users/mahdirezaee/Documents/casadellapizza-site/IMG_5997.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
             <div class="section-content">
                 <div class="hero-details">
-                    <h2 class="title"> Best Pizzas in zone </h2>
-                    <h3 class="subtitle"> Enjoy wooden cooked fresh pizza with us </h3>
-                    <p class="description"> Welcome to Casa della pizza , Here we make the best pizzas who will ever eat in padoba with allot of love and caring. we use only fresh ingredients and 48h rested doughs to give you the best exprience.
-                    </p>
-
+                    <h2 class="title" data-en="Best Pizzas in the area" data-it="Le migliori pizze della zona">
+                        Best Pizzas in zone
+                        </h2>
+                        <h3 class="subtitle" data-en="Enjoy wood-fired fresh pizza with us" data-it="Goditi la pizza cotta a legna fresca con noi">
+                            Enjoy wooden cooked fresh pizza with us
+                            </h3>
+                            
+                            <p class="description"
+                            data-en="Welcome to Casa della Pizza. We make the best pizzas you will ever eat in Padova, with love and care. We use only fresh ingredients and 48-hour rested dough to give you the best experience."
+                            data-it="Benvenuto da Casa della Pizza. Prepariamo le migliori pizze che tu possa mangiare a Padova, con amore e cura. Usiamo solo ingredienti freschi e impasti a lunga lievitazione di 48 ore per offrirti la migliore esperienza.">
+                            Welcome to Casa della pizza...
+                            </p>
+                            
                     <div class="buttons">
-                        <a href="#menu" class="button order-now"  >Order now </a>
-                        <a href="#contact" class="button contact-us">Contact us </a>
+                        <a href="#menu" class="button order-now" data-en="Order now" data-it="Ordina ora">Order now</a>
+                        <a href="#contact" class="button contact-us" data-en="Contact us" data-it="Contattaci">Contact us</a>
                     </div>
 
                 </div>
@@ -103,21 +116,33 @@
         </section>
 
         <!--about section-->
-        <section class="about-section" id="about"> 
+        <section class="about-section reveal" id="about" > 
              <div class="section-content">
                 <div class="about-image-wrapper">
                     <img src="pizzeria.jpg" alt="About" class="about-image">
                 </div>
                 <div class="about-details">  
-                    <h2 class="section-title">About us</h2>
-                    <p class="text">
-                        🔥 Experience the true taste of tradition at our **Pizza a Legna**! Every pizza is handcrafted with fresh, 
+                    <h2 class="section-title" data-en="About us" data-it="Chi siamo">About us</h2>
+                    <p class="text"
+                        data-en="🔥 Experience the true taste of tradition at our **Pizza a Legna**! Every pizza is handcrafted with fresh, 
                         high-quality ingredients and baked to perfection in our authentic wood-fired oven. 
                         The crackling fire gives each pizza a perfectly crispy crust, a smoky aroma,
                          and that unmistakable Italian flavor you can not find anywhere else.
                           From classic favorites to delicious specialty creations,
                           every bite is a celebration of real Italian pizza. Gather with friends, 
-                          enjoy the warm atmosphere, and let the fire bring your pizza to life. 🍕🔥
+                          enjoy the warm atmosphere, and let the fire bring your pizza to life. 🍕🔥"
+                          
+
+                          data-it="🔥 Scopri il vero gusto della tradizione nella nostra Pizza a Legna! 
+                          Ogni pizza è lavorata a mano con ingredienti freschi e di alta qualità,
+                           cotta alla perfezione nel nostro autentico forno a legna.
+                            Il fuoco scoppiettante regala una crosta perfettamente croccante,
+                            un aroma fumé e quel sapore inconfondibile di vera pizza italiana che non trovi altrove. 
+                            Dai classici intramontabili alle nostre deliziose creazioni speciali, 
+                            ogni morso è una celebrazione della vera pizza italiana. Riuniti con gli amici,
+                           goditi l'atmosfera calda e lascia che il fuoco dia vita alla tua pizza. 🍕🔥 "
+                          
+                          >
                     </p>
                     <div class="social-link-list">
                         <a href="#" class="social-link">
@@ -134,39 +159,40 @@
              </div>
         </section>
         <!--menu section-->
-        <section class="menu-section" id="menu">
-            <h2 class="section-title">Our Menu</h2>
+        <section class="menu-section reveal" id="menu">
+            <h2 class="section-title" data-en="Our Menu" data-it="Il nostro menu">Our Menu</h2>
 
             <div class="section-content">
                 <ul class="menu-list">
                     <li class="menu-item" onclick="openMenu('traditional')">
                         <img src="traditional.jpg" alt="Traditional pizza" class="menu-image">
-                        <h3 class="name">Traditional Pizza</h3>
+                        <h3 class="name" data-en="Traditional Pizza" data-it="Pizza Tradizionale">Traditional Pizza</h3>
                         
                     </li>
 
                     <li class="menu-item" onclick="openMenu('special')">
                         <img src="special.jpg" alt="Special pizza" class="menu-image">
-                        <h3 class="name">Special Pizza</h3>
+                        <h3 class="name" data-en="Special Pizza" data-it="Pizza Speciale">Special Pizza</h3>
                    
                        
                     </li>
 
                     <li class="menu-item" onclick="openMenu('patatine')">
                         <img src="pizpat.jpg" alt="pizza con patatine" class="menu-image">
-                        <h3 class="name">Pizza with Patatine</h3>
+                        <h3 class="name" data-en="Pizza with Fries" data-it="Pizza con Patatine">Pizza with Patatine</h3>
+
                       
                     </li>   
                     <li class="menu-item" onclick="openMenu('bufala')">
                         <img src="pizbuf.jpg" alt="pizza con Bufala" class="menu-image">
-                        <h3 class="name">Pizza with Bufala</h3>
+                        <h3 class="name" data-en="Pizza with Bufala" data-it="Pizza con Bufala">Pizza with Bufala</h3>
                      
                     </li>
 
 
                     <li class="menu-item" onclick="openMenu('frittura')">
                         <img src="patate-fritte.jpg" alt="Frittura " class="menu-image">
-                        <h3 class="name">Frying</h3>
+                        <h3 class="name" data-en="Fried Food" data-it="Frittura">Frying</h3>
                         
                     </li>
 
@@ -176,7 +202,7 @@
 
                     <li class="menu-item" onclick="openMenu('drinks')">
                         <img src="drinkss.webp" alt="Drinks" class="menu-image">
-                        <h3 class="name">Drinks</h3>
+                        <h3 class="name" data-en="Drinks" data-it="Bevande">Drinks</h3>
 
                     </li>
                        
@@ -190,8 +216,8 @@
 
 
         <!--Reviews section-->
-        <section class="reviews-section" id="reviews">
-              <h2 class="section-title">Reviews</h2>
+        <section class="reviews-section reveal" id="reviews">
+            <h2 class="section-title" data-en="Reviews" data-it="Recensioni">Reviews</h2>
               <div class="section-content">
 
                  <div class="slider-container swiper">
@@ -236,29 +262,29 @@
 
 
         <!--Gallery setion-->
-        <section class="gallery-section" id="gallery">
-            <h2 class="section-title">Gallery</h2>
+        <section class="gallery-section reveal" id="gallery">
+            <h2 class="section-title" data-en="Gallery" data-it="Galleria">Gallery</h2>
             <div class="section-content">
                 <ul class="photo-list">
                     
                     <li class="photo-item">
-                        <img src="pizza2.jpg" alt="photo" class="pizza-photos">
+                        <img src="pizza2.jpg" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     
                     <li class="photo-item">
-                        <img src="IMG_2787.JPG" alt="photo" class="pizza-photos">
+                        <img src="IMG_2787.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     <li class="photo-item">
-                        <img src="IMG_2788.JPG" alt="photo" class="pizza-photos">
+                        <img src="IMG_2788.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     <li class="photo-item">
-                        <img src="IMG_2789.JPG" alt="photo" class="pizza-photos">
+                        <img src="IMG_2789.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     <li class="photo-item">
-                        <img src="IMG_2790.JPG" alt="photo" class="pizza-photos">
+                        <img src="IMG_2790.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     <li class="photo-item">
-                        <img src="IMG_2791.JPG" alt="photo" class="pizza-photos">
+                        <img src="IMG_2791.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
                     </li>
                     <li class="photo-item">
                         <img src="IMG_2792.JPG" alt="photo" class="pizza-photos">
@@ -279,8 +305,8 @@
         </section>
 
         <!--Contact section-->
-        <section class="contact-section" id="contact">
-             <h2 class="section-title">Contact us</h2>
+        <section class="contact-section reveal" id="contact">
+            <h2 class="section-title" data-en="Contact us" data-it="Contattaci">Contact us</h2>
              <div class="section-content">
                 <ul class="contact-info-list">
                     <li class="contact-info">
@@ -311,19 +337,47 @@
 
 
                 </ul>
-                <form class="contact-form" id="contact-form">
+               <form class="contact-form" id="contact-form"> 
 
-                    <input type="text" class="form-input" name="user_name" id="contact-name" placeholder="Your name" required>
-                    
-                    <input type="email" class="form-input" name="user_email" id="contact-email" placeholder="Your email" required>
-                    
-                    <textarea class="form-input" name="message" id="contact-message" placeholder="Your message" required></textarea>
-                    
-                    <button type="submit" class="submit-button">
-                        Submit
+                    <input 
+                    type="text" 
+                    class="form-input" 
+                    id="contact-name"
+                    data-en-placeholder="Your name"
+                    data-it-placeholder="Il tuo nome"
+                    placeholder="Your name"
+                    required
+                    >
+
+                    <input 
+                    type="email" 
+                    class="form-input" 
+                    id="contact-email"
+                    data-en-placeholder="Your email"
+                    data-it-placeholder="La tua email"
+                    placeholder="Your email"
+                    required
+                    >
+
+                    <textarea 
+                    class="form-input" 
+                    id="contact-message"
+                    data-en-placeholder="Your message"
+                    data-it-placeholder="Il tuo messaggio"
+                    placeholder="Your message"
+                    required
+                    ></textarea> 
+
+                    <button 
+                    type="submit" 
+                    class="submit-button"
+                    data-en="Submit"
+                    data-it="Invia"
+                    >
+                    Submit
                     </button>
-                
-                </form>
+
+                    </form>
              </div>
         </section>
 
@@ -374,24 +428,25 @@
         
                 <span class="close-panel" onclick="closeCart()">&times;</span>
         
-                <h2>Your Order</h2>
-        
+                <h2 data-en="Your Order" data-it="Il tuo ordine">Your Order</h2>
                 <ul id="cart-items"></ul>
         
-                <h3 id="cart-total">Total: €0</h3>
+                <h3 id="cart-total" data-en="Total: €0" data-it="Totale: €0">Total: €0</h3>
+
                 <div id="order-summary"></div>
 
                 <div class="checkout-form">
 
-                    <label>Order Type</label>
+                  <label data-en="Order Type" data-it="Tipo di ordine">Order Type</label>
                     
                     <div class="order-type-buttons">
 
-                        <button type="button" id="pickup-btn" onclick="setOrderType('pickup')" class="order-btn-active">
+                        
+                        <button type="button" id="pickup-btn"  data-en="Pickup" data-it="Ritiro" onclick="setOrderType('pickup')" class="order-btn-active">
                         Pickup
                         </button>
                         
-                        <button type="button" id="delivery-btn" onclick="setOrderType('delivery')">
+                        <button type="button" id="delivery-btn"  data-en="Delivery" data-it="Consegna" onclick="setOrderType('delivery')">
                         Delivery
                         </button>
                         
@@ -399,40 +454,67 @@
                         
                         <input type="hidden" id="order-type" value="pickup">
                     
-                    <label>Pickup / Delivery Time</label>
-                    <select id="order-time" class="form-input">
-                        <option value="">Select pickup / delivery time</option>
-                        </select>
-                    
-                    <label>Your Name</label>
+                   
+                        <div class="form-group">
+                            <label data-en="Select Time" data-it="Seleziona orario">Select Time</label>
+                            
+                            <select id="order-time" class="form-input">
+                            <option value="" data-en="Select Time" data-it="Seleziona orario">-- Select Time --</option>
+                            
+                            <option value="18:00">18:00</option>
+                            <option value="18:15">18:15</option>
+                            <option value="18:30">18:30</option>
+                            <option value="18:45">18:45</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:15">19:15</option>
+                            <option value="19:30">19:30</option>
+                            <option value="19:45">19:45</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:15">20:15</option>
+                            <option value="20:30">20:30</option>
+                            <option value="20:45">20:45</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:15">21:15</option>
+                            <option value="21:30">21:30</option>
+                            <option value="21:45">21:45</option>
+                            <option value="22:00">22:00</option>
+                            
+                            </select>
+                            </div>
+                            <label data-en="Your Name" data-it="Il tuo nome">Your Name</label>
                     <input type="text" id="customer-name" required>
                     
-                    <label>Phone Number</label>
+                    <label data-en="Phone Number" data-it="Numero di telefono">Phone Number</label>
                     <input type="tel" id="customer-phone">
                     
                     <div id="address-field" class="address-field">
 
-                        <label for="customer-address">Address</label>
+                        <label for="customer-address"  data-en="Address" data-it="Indirizzo">Address</label>
                         <input type="text" id="customer-address" class="form-input" required>
                         
                         
                         </div>
                         <div id="doorbell-field" class="doorbell-field">
-                        <label for="customer-doorbell">Name on Bell</label>
+                        <label for="customer-doorbell"  data-en="Name on Bell" data-it="Nome sul campanello" >Name on Bell</label>
                         <input type="text" id="customer-doorbell" class="form-input" required>
                     </div>
 
-                        <label>Order Notes</label>
-                    <textarea id="order-note" placeholder="Extra instructions (optional)"></textarea>
-                        
-                    
+                    <label data-en="Order Notes" data-it="Note ordine">Order Notes</label>
 
+                    <textarea id="order-note"
+                    data-en-placeholder="Extra instructions (optional)"
+                    data-it-placeholder="Istruzioni extra (opzionale)"
+                    placeholder="Extra instructions (optional)"></textarea>
                     
-                <button class="checkout-btn" onclick="checkoutOrder()">
+                    <button class="checkout-btn"  onclick="checkoutOrder()"
+                    data-en="Order from WhatsApp"
+                    data-it="Ordina su WhatsApp">
                     Order From Whatsapp
                     </button>
-        
+
+                   
             </div>
+
         
         </div>
 
@@ -440,15 +522,23 @@
 
             <div class="confirmation-box">
           
-              <h2>Confirm your order</h2>
+                <h2 data-en="Confirm your order" data-it="Conferma il tuo ordine">
+                    Confirm your order
+                    </h2>
+                    
           
               <div id="confirmation-summary"></div>
+
+    
+
           
-              <button onclick="sendWhatsAppOrder()" class="confirm-send">
+              <button onclick="sendWhatsAppOrder()" class="confirm-send" data-en="Send Order"
+              data-it="Invia ordine" >
                 Send Order
               </button>
           
-              <button onclick="closeConfirmation()" class="confirm-cancel">
+              <button onclick="closeConfirmation()" class="confirm-cancel" data-en="Cancel"
+              data-it="Annulla">
                 Cancel
               </button>
           
@@ -456,35 +546,26 @@
           
           </div>
 
+          
+
     <!--Linking custom script-->
     <script src="script.js">
     </script>
 
 
 
-<script>
-    function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-    {
-    pageLanguage: 'en',
-    includedLanguages: 'en,it',
-    autoDisplay: false
-    },
-    'google_translate_element'
-    );
-    }
-    </script>
-    
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
     <div id="order-success" class="order-success">
 
         <div class="success-box">
         
-        <h3>Order Sent ✅</h3>
+            <h3 data-en="Order Sent ✅" data-it="Ordine inviato ✅">Order Sent ✅</h3>
+
         
-        <p>
+        <p data-en="Your order has been sent to Casa Della Pizza.  
+        We will confirm it shortly."
+        data-it="Il tuo ordine è stato inviato a Casa Della Pizza. Lo confermeremo a breve." >
         Your order has been sent to Casa Della Pizza.  
         We will confirm it shortly.
         </p>
@@ -495,6 +576,8 @@
         
         </div>
 
+
+        <script src="https://unpkg.com/lenis@1.0.6/bundled/lenis.min.js"></script>
 
 </body>
 
