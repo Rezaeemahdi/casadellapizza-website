@@ -124,6 +124,7 @@ function openMenu(type) {
             {name: "Prosciutto", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), prosciutto cotto AFF."},
             {name: "Carciofi", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), carciofi"},
             {name: "Salsiccia", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salsiccia"},
+            {name: "Romana", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), acciughe"},
             {name: "Tonno", priceN: "€6.80", priceM: "€14.20", ingredients: "pom., mozz. (FDL), tonno"},
             {name: "Diavola", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salamino piccante"},
             {name: "Melanzane e Gorgonzola", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. (FDL), melanzane grigliate, gorgonzola"},
