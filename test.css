@@ -359,7 +359,7 @@ pointer-events:auto;
     border-radius:15px;
     width:420px;
     max-width:70%;
-    
+
     
     /* 🔥 IMPORTANT */
     max-height:80vh;
@@ -547,7 +547,7 @@ color:white;
     padding: 0;
     margin: 0;
     width: max-content; /* Ensures items stay in a single row */
-    animation: infiniteRoll 25s linear infinite; /* Adjust 25s for speed */
+    animation: infiniteRoll 45s linear infinite; /* Adjust 25s for speed */
 }
 
 /* Pause animation on hover */

@@ -113,77 +113,76 @@ function openMenu(type) {
         title.innerText = "Pizze Tradizionali";
         items = [
             {name: "Marinara", priceN: "€5,00", priceM: "€10,00", ingredients: "pom., aglio, origano"},
-            {name: "Margherita", priceN: "€5,50", priceM: "€11,00", ingredients: "pom. mozz., fior di latte (FDL)"},
+            {name: "Margherita", priceN: "€5.50", priceM: "€11,00", ingredients: "pom. mozz., fior di latte (FDL)"},
             {name: "Cipolla", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), Cipolla rossa"},
-            {name: "Viennese", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), wurstel di pollo"},
+            {name: "Viennese", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), wurstel di pollo"},
             {name: "Peperoni", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), peperoni al forno"},
             {name: "Melanzane", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), melanzane grigliate"},
             {name: "Melanzane Fritte", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. (FDL), melanzane fritte"},
             {name: "Zucchine", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), zucchine grigliate"},
             {name: "Funghi", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), funghi trifolati champ."},
-            {name: "Prosciutto", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), prosciutto cotto AFF."},
+            {name: "Prosciutto", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), prosciutto cotto AFF."},
             {name: "Carciofi", priceN: "€6,00", priceM: "€12,00", ingredients: "pom., mozz. (FDL), carciofi"},
-            {name: "Salsiccia", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salsiccia"},
-            {name: "Romana", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), acciughe"},
-            {name: "Tonno", priceN: "€6,80", priceM: "€14,20", ingredients: "pom., mozz. (FDL), tonno"},
-            {name: "Diavola", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salamino piccante"},
+            {name: "Salsiccia", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salsiccia"},
+            {name: "Tonno", priceN: "€6.80", priceM: "€14.20", ingredients: "pom., mozz. (FDL), tonno"},
+            {name: "Diavola", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), salamino piccante"},
             {name: "Melanzane e Gorgonzola", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. (FDL), melanzane grigliate, gorgonzola"},
-            {name: "Rucola e Grana", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), rucola, grana scaglie"},
-            {name: "Rucola e Pomodorini", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), rucola, pomodorini"},
-            {name: "Parmigiana", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), melanzane grigliate, grana"},
-            {name: "Raggio di Sole", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), asparagi, uovo"},
-            {name: "Saporita", priceN: "€7,60", priceM: "€15,20", ingredients: "pom., mozz. (FDL), salsiccia, Cipolla rossa"},
-            {name: "Melanzane e Salsiccia", priceN: "€7,60", priceM: "€15,20", ingredients: "pom., mozz. (FDL), melanzane gril., salsiccia"},
-            {name: "Salsiccia e Salamino", priceN: "€7,80", priceM: "€15,60", ingredients: "pom., mozz. (FDL), salsiccia, salamino piccante"},
-            {name: "Prosciutto e Funghi", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), prosciutto AFF. e funghi"},
-            {name: "Tonno e Cipolla", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), tonno, Cipolla rossa"},
-            {name: "Allegro", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), melanzane, pomodorini, grana"},
-            {name: "Ricotta e Spinaci", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), ricotta, spinaci"},
+            {name: "Rucola e Grana", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), rucola, grana scaglie"},
+            {name: "Rucola e Pomodorini", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. (FDL), rucola, pomodorini"},
+            {name: "Parmigiana", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), melanzane grigliate, grana"},
+            {name: "Raggio di Sole", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), asparagi, uovo"},
+            {name: "Saporita", priceN: "€7.60", priceM: "€15.20", ingredients: "pom., mozz. (FDL), salsiccia, Cipolla rossa"},
+            {name: "Melanzane e Salsiccia", priceN: "€7.60", priceM: "€15.20", ingredients: "pom., mozz. (FDL), melanzane gril., salsiccia"},
+            {name: "Salsiccia e Salamino", priceN: "€7.80", priceM: "€15.60", ingredients: "pom., mozz. (FDL), salsiccia, salamino piccante"},
+            {name: "Prosciutto e Funghi", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), prosciutto AFF. e funghi"},
+            {name: "Tonno e Cipolla", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), tonno, Cipolla rossa"},
+            {name: "Allegro", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), melanzane, pomodorini, grana"},
+            {name: "Ricotta e Spinaci", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. (FDL), ricotta, spinaci"},
             {name: "Boscaiola", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), misto bosco"},
             {name: "Napoletana", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. (FDL), capperi, acciughe, olive"},
-            {name: "Melanzane Zucchine Salsiccia", priceN: "€7,80", priceM: "€15,60", ingredients: "pom., mozz. (FDL), melanzane, zucchine, salsiccia"},
-            {name: "Vegetariana", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), verdure di stagione"},
-            {name: "Capricciosa", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), prosciutto cotto, carciofi, funghi"},
-            {name: "4 Stagioni", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), prosciutto cotto, carciofi, funghi, olive nere"},
-            {name: "Carbonara", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), pancetta, uovo, grana"},
-            {name: "Ungherese", priceN: "€8,60", priceM: "€17,20", ingredients: "pom., mozz. (FDL), salsiccia, salamino piccante wurstel"},
-            {name: "Porcini", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), porcini"},
-            {name: "Italia", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), rucola, grana, pomodorini"},
-            {name: "Diavoletta", priceN: "€8,00", priceM: "€16,00", ingredients: "pom., mozz. (FDL), cipolla, salsiccia, salamino piccante"},
-            {name: "Speckola", priceN: "€8,60", priceM: "€17,20", ingredients: "pom., mozz. (FDL), speck, gorgonzola"}
+            {name: "Melanzane Zucchine Salsiccia", priceN: "€7.80", priceM: "€15.60", ingredients: "pom., mozz. (FDL), melanzane, zucchine, salsiccia"},
+            {name: "Vegetariana", priceN: "€8.00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), verdure di stagione"},
+            {name: "Capricciosa", priceN: "€8.00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), prosciutto cotto, carciofi, funghi"},
+            {name: "4 Stagioni", priceN: "€8.00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), prosciutto cotto, carciofi, funghi, olive nere"},
+            {name: "Carbonara", priceN: "€8.00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), pancetta, uovo, grana"},
+            {name: "Ungherese", priceN: "€8.60", priceM: "€17.20", ingredients: "pom., mozz. (FDL), salsiccia, salamino piccante wurstel"},
+            {name: "Porcini", priceN: "€8,00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), porcini"},
+            {name: "Italia", priceN: "€8,00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), rucola, grana, pomodorini"},
+            {name: "Diavoletta", priceN: "€8,00", priceM: "€16.00", ingredients: "pom., mozz. (FDL), cipolla, salsiccia, salamino piccante"},
+            {name: "Speckola", priceN: "€8.60", priceM: "€17.20", ingredients: "pom., mozz. (FDL), speck, gorgonzola"}
         ];
     } else if (type === "special") {
         title.innerText = "Pizza Speciali";
         items = [
-            {name: "Contadina", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., cipolla, funghi, salsiccia, asparagi"},
-            {name: "Contadina 2", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., pancetta affumicata, uova, asparagi"},
-            {name: "Ghiotta", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., cipolla, salamino piccante, gorgonzola"},
-            {name: "Messicana", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., sal. picc., salsiccia, peperoncino, olio piccante"},
-            {name: "Veneta", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., radicchio al forno, gorgonzola, salsiccia"},
-            {name: "Costiera", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., pomodorini, gamberetti, zucchine, aglio"},
-            {name: "Rustica", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., prosciutto cotto, funghi, salsiccia, cipolla"},
-            {name: "Leggera", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., mais, rucola, pomodorini, grana"},
-            {name: "Zingara", priceN: "€9,50", priceM: "€19,00", ingredients: "mozz., melanzane, peperoni, funghi, wurstel, pancetta"},
-            {name: "Campagnola", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., verdure miste, pancetta"},
-            {name: "Brie e Speck", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., brie, speck"},
-            {name: "Alpina", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., gorgonzola, misto bosco, pancetta"},
-            {name: "Golosa", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., patatine fritte, porchetta"},
+            {name: "Contadina", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., cipolla, funghi, salsiccia, asparagi"},
+            {name: "Contadina 2", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., pancetta affumicata, uova, asparagi"},
+            {name: "Ghiotta", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., cipolla, salamino piccante, gorgonzola"},
+            {name: "Messicana", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., sal. picc., salsiccia, peperoncino, olio piccante"},
+            {name: "Veneta", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., radicchio al forno, gorgonzola, salsiccia"},
+            {name: "Costiera", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., pomodorini, gamberetti, zucchine, aglio"},
+            {name: "Rustica", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., prosciutto cotto, funghi, salsiccia, cipolla"},
+            {name: "Leggera", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., mais, rucola, pomodorini, grana"},
+            {name: "Zingara", priceN: "€9.50", priceM: "€19,00", ingredients: "mozz., melanzane, peperoni, funghi, wurstel, pancetta"},
+            {name: "Campagnola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., verdure miste, pancetta"},
+            {name: "Brie e Speck", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., brie, speck"},
+            {name: "Alpina", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., gorgonzola, misto bosco, pancetta"},
+            {name: "Golosa", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., patatine fritte, porchetta"},
             {name: "Barsanese", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., asparagi, gorgonzola, speck"},
-            {name: "Amalfitana", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., zucchine, gamberetti, rucola"},
-            {name: "Alpinese", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., pancetta aff., radicchio al forno, gorgonzola"},
+            {name: "Amalfitana", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., zucchine, gamberetti, rucola"},
+            {name: "Alpinese", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., pancetta aff., radicchio al forno, gorgonzola"},
             {name: "Forte", priceN: "€9,00", priceM: "€18,00", ingredients: "mozz., patatine fritte, sal. picc., salsiccia, salsa rosa"},
             {name: "Valtellina", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., bresaola, rucola, grana"},
             {name: "Gustosa", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., gorgonzola, ricotta, speck"},
-            {name: "Fenice", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola, porcini"},
-            {name: "Della Casa", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., prosc. cotto, carciofi, wurstel, asparagi, uovo"},
-            {name: "Preferita", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., scamorza, misto bosco, rucola, prosc. cotto, sal. picc."}
+            {name: "Fenice", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola, porcini"},
+            {name: "Della Casa", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., prosc. cotto, carciofi, wurstel, asparagi, uovo"},
+            {name: "Preferita", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., scamorza, misto bosco, rucola, prosc. cotto, sal. picc."}
         ];
     } else if (type === "bufala") {
         title.innerText = "Pizze con Bufala";
         items = [
-            {name: "Bufala", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz. di bufala (FDL)"},
+            {name: "Bufala", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. di bufala (FDL)"},
             {name: "Bufala e Acciughe", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. di bufala (FDL), acciughe"},
-            {name: "Bufala e Salamino", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz. di bufala (FDL), salamino piccante"},
+            {name: "Bufala e Salamino", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. di bufala (FDL), salamino piccante"},
             {name: "Bufalalina", priceN: "€8,80", priceM: "€17,40", ingredients: "mozz. di bufala (FDL), pomodorini, pesto"},
             {name: "Pomodorini, Rucola e Grana", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz. di bufala (FDL), pomodorini, rucola, grana"},
             {name: "Bufala e Verdure", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz. di bufala (FDL), verdure di stagione"}
@@ -191,10 +190,10 @@ function openMenu(type) {
     } else if (type === "radicchio") {
         title.innerText = "Pizze con Radicchio al Forno";
         items = [
-            {name: "Radicchio", priceN: "€6,50", priceM: "€13,00", ingredients: "pom., mozz., radicchio di treviso"},
-            {name: "Radicchio e Gorgonzola", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, gorgonzola"},
-            {name: "Radicchio e Salsiccia", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, salsiccia"},
-            {name: "Radicchio e Salamino", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, sal. picc."},
+            {name: "Radicchio", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz., radicchio di treviso"},
+            {name: "Radicchio e Gorgonzola", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, gorgonzola"},
+            {name: "Radicchio e Salsiccia", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, salsiccia"},
+            {name: "Radicchio e Salamino", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., radicchio, sal. picc."},
             {name: "Radicchio e Affettati", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., radicchio, affettati (crudo, speck, pancetta)"},
             {name: "Radicchio e Porcini", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., radicchio, porcini"},
             {name: "Radicchio e Misto Bosco", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., radicchio e funghi misti"}
@@ -212,52 +211,52 @@ function openMenu(type) {
         title.innerText = "Pizze con Porchetta";
         items = [
             {name: "Porchetta e Gorgonzola", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., porchetta, gorgonzola"},
-            {name: "Porchetta, Melanzane e Zucchine", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, melanzane, zucchine"},
-            {name: "Porchetta Porcini o Misto Bosco", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, funghi"},
-            {name: "Porchetta, Rucola e Grana", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, rucola, grana"},
-            {name: "Porchetta e 5 Formaggi", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, 5 formaggi"},
-            {name: "Porchetta e Verdure", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, verdure"}
+            {name: "Porchetta, Melanzane e Zucchine", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, melanzane, zucchine"},
+            {name: "Porchetta Porcini o Misto Bosco", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, funghi"},
+            {name: "Porchetta, Rucola e Grana", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, rucola, grana"},
+            {name: "Porchetta e 5 Formaggi", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, 5 formaggi"},
+            {name: "Porchetta e Verdure", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., porchetta, verdure"}
         ];
     } else if (type === "pancetta") {
         title.innerText = "Pizze con Pancetta";
         items = [
-            {name: "Pancetta, Radicchio e Gorgonzola", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, radicchio, gorgonzola"},
-            {name: "Pancetta e Verdure", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, verdure"},
-            {name: "Pancetta, Salamino e Grana", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, sal. picc., grana"},
-            {name: "Pancetta, Peperoni, Funghi e Grana", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, peperoni, funghi, grana"}
+            {name: "Pancetta, Radicchio e Gorgonzola", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, radicchio, gorgonzola"},
+            {name: "Pancetta e Verdure", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, verdure"},
+            {name: "Pancetta, Salamino e Grana", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, sal. picc., grana"},
+            {name: "Pancetta, Peperoni, Funghi e Grana", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pancetta, peperoni, funghi, grana"}
         ];
     } else if (type === "provola") {
         title.innerText = "Pizze con Provola Affumicata";
         items = [
-            {name: "Provola e Salsiccia", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., provola, salsiccia"},
-            {name: "Provola, Melanzane, Zucchine", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., provola, melanzane, zucchine"},
+            {name: "Provola e Salsiccia", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., provola, salsiccia"},
+            {name: "Provola, Melanzane, Zucchine", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., provola, melanzane, zucchine"},
             {name: "6 Formaggi", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., provola, 5 formaggi"},
-            {name: "Provola, Funghi, Peperoni, Gorgonzola", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., provola, funghi, peperoni, gorgonzola"}
+            {name: "Provola, Funghi, Peperoni, Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., provola, funghi, peperoni, gorgonzola"}
         ];
     } else if (type === "special_condimenti") {
         title.innerText = "Ingredienti Gourmet";
         items = [
-            {name: "Ricotta, Spinaci e Gorgonzola", priceN: "€8,50", priceM: "€17,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
-            {name: "Pomodori Secchi e 5 Formaggi", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., pomodori secchi, 5 formaggi"},
-            {name: "Gamberetti e Porcini", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., tartufo, porcini"},
-            {name: "Cavallina (Sfilacci)", priceN: "€7,50", priceM: "€15,00", ingredients: "pom., mozz., sfilacci di cavallo"},
-            {name: "Noci, Gorgonzola e Speck", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"}
+            {name: "Ricotta, Spinaci e Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
+            {name: "Pomodori Secchi e 5 Formaggi", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pomodori secchi, 5 formaggi"},
+            {name: "Gamberetti e Porcini", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., tartufo, porcini"},
+            {name: "Cavallina (Sfilacci)", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., sfilacci di cavallo"},
+            {name: "Noci, Gorgonzola e Speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"}
         ];
     } else if (type === "patatine") {
         title.innerText = "Pizze con Patatine Fritte";
         items = [
-            {name: "Patatosa", priceN: "€6,80", priceM: "€13,60", ingredients: "pom., mozz., patatine fritte"},
+            {name: "Patatosa", priceN: "€6.80", priceM: "€13.60", ingredients: "pom., mozz., patatine fritte"},
             {name: "Patate e Wurstel", priceN: "€8", priceM: "€16", ingredients: "pom., mozz., patatine fritte, wurstel"},
-            {name: "Patate e Salsiccia", priceN: "€8,50", priceM: "€16,50", ingredients: "pom., mozz., patatine fritte, salsiccia"},
-            {name: "Patate e Salamino", priceN: "€8,50", priceM: "€16,50", ingredients: "pom., mozz., patatine fritte, salamino"},
-            {name: "Patate e Pancetta", priceN: "€9,50", priceM: "€19,00", ingredients: "pom., mozz., patatine fritte, pancetta"}
+            {name: "Patate e Salsiccia", priceN: "€8.50", priceM: "€16.50", ingredients: "pom., mozz., patatine fritte, salsiccia"},
+            {name: "Patate e Salamino", priceN: "€8.50", priceM: "€16.50", ingredients: "pom., mozz., patatine fritte, salamino"},
+            {name: "Patate e Pancetta", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., patatine fritte, pancetta"}
         ];
     } else if (type === "bianche") {
         title.innerText = "Pizze Bianche";
         items = [
             {name: "5 Formaggi", priceN: "€8,00", priceM: "€16,00", ingredients: "mozz., gorgonzola, asiago, emmental, grana"},
             {name: "Mortadellona", priceN: "€11,00", priceM: "N/A", ingredients: "provola, pesto pistacchio, mortadella, granella"},
-            {name: "Burratina", priceN: "€10,50", priceM: "N/A", ingredients: "mozz., prosciutto crudo, rucola, burrata"},
+            {name: "Burratina", priceN: "€10.50", priceM: "N/A", ingredients: "mozz., prosciutto crudo, rucola, burrata"},
             {name: "Friarielli", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., friarielli, salsiccia"},
             {name: "Emiliana", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., spinaci, porchetta, porcini, grana"}
         ];
@@ -265,34 +264,39 @@ function openMenu(type) {
         title.innerText = "Calzoni e Baguette";
         items = [
             {name: "Calzone Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "pom., mozz., prosc. cotto, funghi"},
-            {name: "Calzone Ricotta e Spinaci", priceN: "€8,50", priceM: "N/A", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
+            {name: "Calzone Ricotta e Spinaci", priceN: "€8.50", priceM: "N/A", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
             {name: "Baguette Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "mozz., prosciutto cotto, funghi"},
-            {name: "Baguette Speck, Rucola e Brie", priceN: "€8,50", priceM: "N/A", ingredients: "mozz., speck, rucola, brie"}
+            {name: "Baguette Speck, Rucola e Brie", priceN: "€8.50", priceM: "N/A", ingredients: "mozz., speck, rucola, brie"}
         ];
     } else if (type === "frittura") {
         title.innerText = "Frittura e Kebab";
         items = [
-            {name: "Crocchette di Patate ", priceN: "€4,50", priceM: "N/A", ingredients: "(8 pezzi)"},
-            {name: "Chicken Nuggets ", priceN: "€5,50", priceM: "N/A", ingredients: "(6 pezzi)"},
-            {name: "Mozzerella Sticks ", priceN: "€5,50", priceM: "N/A", ingredients: "(6 pezzi)"},
-            {name: "Onion Rings ", priceN: "€5,50", priceM: "N/A", ingredients: "(6 pezzi)"},
-            {name: "Patatine Dippers", priceN: "€4,5", priceM: "€8", ingredients: "Normale : 200g , Maxi : 400g"},
+            {name: "Crocchette di Patate ", priceN: "€4.50", priceM: "N/A", ingredients: "(8 pezzi)"},
+            {name: "Chicken Nuggets ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
+            {name: "Mozzerella Sticks ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
+            {name: "Onion Rings ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
+            {name: "Patatine Dippers", priceN: "€4.5", priceM: "€8", ingredients: "Normale : 200g , Maxi : 400g"},
             {name: "Patatine Fritte", priceN: "€3", priceM: "€5", ingredients: "Normale : 200g , Maxi : 400g"},
-            {name: "Pizza Kebab e patatine", priceN: "€8,50", priceM: "€17,00", ingredients: "mozz., carne kebab, patatine fritte , salse"},
         ];
-    }
-else if (type === "drinks") {
-    title.innerText = "drinks";
+    }else if (type === "Kebab") {
+    title.innerText = "Kebab";
+    items = [
+        
+        {name: "Pizza Kebab e patatine", priceN: "€8.50", priceM: "€17,00", ingredients: "mozz., carne kebab, patatine fritte , salse"},
+    ];
+    }   
+else if (type === "Drinks / Bevande") {
+    title.innerText = "Drinks / Bevande";
     items = [
         {name: "Acqua Naturale / Frizzante (0.5L)", priceN: "€1", priceM: "N/A", ingredients: "Bottiglia 50cl"},
-        {name: "Bibite in Lattina (33cl)", priceN: "€2,50", priceM: "N/A", ingredients: "Coca Cola"},
-        {name: "Bibite in Lattina (33cl)", priceN: "€2,50", priceM: "N/A", ingredients: "Coca Cola Zero"},
-        {name: "Bibite in Lattina (33cl)", priceN: "€2,50", priceM: "N/A", ingredients: " Fanta "},
-        {name: "Bibite in Lattina (33cl)", priceN: "€2,50", priceM: "N/A", ingredients: " Sprite"},
-        {name: "Bibite in Lattina (33cl)", priceN: "€2,50", priceM: "N/A", ingredients: " Estathé"},
+        {name: "Coca Cola", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl)"},
+        {name: "Coca Cola Zero", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl)"},
+        {name: "Fanta", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
+        {name: "Sprite", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
+        {name: " Estathé", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
         {name: "Birra in Bottiglia  (33cl)", priceN: "€3,00", priceM: "N/A", ingredients: "Birre varie"},
-        {name: "Birra in Bottiglia (66cl)", priceN: "€3,50", priceM: "N/A", ingredients: "Moretti"},
-        {name: "Birra in Bottiglia (66cl)", priceN: "€3,50", priceM: "N/A", ingredients: " Peroni"},
+        {name: "Moretti", priceN: "€3.50", priceM: "N/A", ingredients: "Birra in Bottiglia (66cl)"},
+        {name: "Peroni", priceN: "€3.50", priceM: "N/A", ingredients: " Birra in Bottiglia (66cl)"},
     ];
 }
    
@@ -555,6 +559,34 @@ document.getElementById("order-confirmation").classList.remove("active")
 
 function sendWhatsAppOrder(){
 
+
+    /* ================= 1. VALIDATION CHECK (THE NEW PART) ================= */
+    
+    const name = document.getElementById("customer-name").value.trim();
+    const phone = document.getElementById("customer-phone").value.trim();
+    const orderType = document.getElementById("order-type").value;
+    const time = document.getElementById("order-time").value;
+    const address = document.getElementById("customer-address").value.trim();
+
+    // Check if cart is empty
+    if (cart.length === 0) {
+        alert("Il carrello è vuoto! / Your cart is empty!");
+        return; // Stops the function
+    }
+
+    // Check basic fields
+    if (!name || !phone || !time) {
+        alert("Per favore inserisci Nome,Numero di telefono e Orario. / Please enter name, phone number, and time.");
+        return; // Stops the function
+    }
+
+    // If it's delivery, check for address
+    if (orderType === "delivery" && !address) {
+        alert("Per favore inserisci l'indirizzo per la consegna. / Please enter the delivery address.");
+        return; // Stops the function
+    }
+
+
     let lang = localStorage.getItem("lang") || "en";
     
     /* ================= TEXTS ================= */
@@ -604,7 +636,7 @@ function sendWhatsAppOrder(){
     message += `%0A*${t.total}: €${total.toFixed(2)}*%0A%0A`;
     
     /* ================= CUSTOMER ================= */
-    
+      /*
     const orderType = document.getElementById("order-type").value;
     const time = document.getElementById("order-time").value;
     const name = document.getElementById("customer-name").value;
@@ -612,7 +644,7 @@ function sendWhatsAppOrder(){
     const address = document.getElementById("customer-address").value;
     const doorbell = document.getElementById("customer-doorbell").value;
     const note = document.getElementById("order-note").value;
-    
+    */
     /* translate pickup/delivery */
     let typeText = orderType === "delivery" ? t.delivery : t.pickup;
     
