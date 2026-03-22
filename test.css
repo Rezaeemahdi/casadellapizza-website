@@ -297,20 +297,25 @@ padding:50px 0 100px;
 }
 
 .menu-section .menu-list{
-display:flex;
-flex-wrap:wrap;
-gap:110px;
-align-items:center;
-justify-content:space-between;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; /* Reduced gap for mobile compatibility */
+    justify-content: center; /* Center items so they don't lean left */
+    align-items: stretch;
 }
 
 .menu-section .menu-list .menu-item{
-display:flex;
-align-items:center;
-text-align:center;
-flex-direction:column;
-justify-content:space-between;
-width:calc(100% / 3 - 110px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px;
+    background: #fff; /* Ensures the card itself has a background */
+    border-radius: 15px;
+    
+    /* FIX FOR IPHONE: Use flex-basis for better scaling */
+    flex: 1 1 280px; /* Grow, Shrink, and a Base width of 280px */
+    max-width: 350px; /* Prevents cards from getting too huge on iPads */
 }
 
 .menu-section .menu-list .menu-item .menu-image{
@@ -1359,15 +1364,15 @@ body.show-mobile-menu .navbar .nav-menu {
                 width: 100%; height: 100%; max-width: 350px; aspect-ratio: 1; 
             }
 
-            .menu-section .menu-list{ gap: 30px; }
+            .menu-section .menu-list{ gap: 20px; }
             
-            .menu-section .menu-list .menu-item{ width: calc(100% / 2 - 30px); }
+            .menu-section .menu-list .menu-item{ width: calc(100% / 2 - 20px); }
 
             .menu-section .menu-list .menu-item .menu-image{ max-width: 200px; }
             .gallery-section .photo-lis{ gap: 30px; }
 
             .gallery-section .photo-list .photo-item{
-                 width: calc(100% / 2 - 30px); 
+                 width: calc(100% / 2 - 20px); 
             }
              
             .contact-section .section-content{ 
@@ -1419,17 +1424,23 @@ body.show-mobile-menu header::before{
 @media screen and (max-width:640px){
 
     .menu-section .menu-list {
-        gap: 30px; 
+        gap: 20px; 
         justify-content: center; /* Center the items */
         flex-direction: column; /* Stack them vertically */
     }
 
     .menu-section .menu-list .menu-item {
-        width: 100%; /* Now 100% works because direction is column */
+        width: 90%; /* Now 100% works because direction is column */
         max-width: 280px; /* Keeps the pizza cards from looking too stretched */
         margin: 0 auto; /* Centers the card */
+        flex: none;
     }
-
+/* Ensure the image is visible */
+.menu-section .menu-list .menu-item .menu-image {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
 .gallery-section .photo-list .photo-item{
 width:100%;
 }
