@@ -33,6 +33,9 @@
             <ul class="nav-menu">
                 <button id="menu-close-button" class="fas fa-times"></button>
 
+               
+
+
                 <li class="nave-item">
 
                     <a href="#" class="nav-link notranslate" data-en="Home" data-it="Home">Home</a>
@@ -57,23 +60,24 @@
                 <li class="nave-item">
                     <a href="#contact" class="nav-link" data-en="Contacts" data-it="Contatti">Contacts</a>
                 </li>
+
+       
             </ul>
 
-        
-            
+          
+            <div class="lang-switch">
+                <span>EN</span>
+                <label class="switch">
+                  <input type="checkbox" id="lang-toggle">
+                  <span class="slider"></span>
+                </label>
+                <span>IT</span>
+              </div>
+              <button id="menu-open-button" class="fas fa-bars"></button>
+       
+         </div>
+
                 
-                </div>
-
-                <div class="lang-switch">
-                    <span>EN</span>
-                    <label class="switch">
-                      <input type="checkbox" id="lang-toggle">
-                      <span class="slider"></span>
-                    </label>
-                    <span>IT</span>
-                  </div>
-            <button id="menu-open-button" class="fas fa-bars"></button>
-
           
         </nav>
     </header>
@@ -158,59 +162,72 @@
                 </div>
              </div>
         </section>
-        <!--menu section-->
+
+
+
+        <!--about section-->
         <section class="menu-section reveal" id="menu">
             <h2 class="section-title" data-en="Our Menu" data-it="Il nostro menu">Our Menu</h2>
-
+        
             <div class="section-content">
                 <ul class="menu-list">
                     <li class="menu-item" onclick="openMenu('traditional')">
                         <img src="traditional.jpg" alt="Traditional pizza" class="menu-image">
                         <h3 class="name" data-en="Traditional Pizza" data-it="Pizza Tradizionale">Traditional Pizza</h3>
-                        
                     </li>
-
                     <li class="menu-item" onclick="openMenu('special')">
                         <img src="special.jpg" alt="Special pizza" class="menu-image">
                         <h3 class="name" data-en="Special Pizza" data-it="Pizza Speciale">Special Pizza</h3>
-                   
-                       
                     </li>
-
-                    <li class="menu-item" onclick="openMenu('patatine')">
-                        <img src="pizpat.jpg" alt="pizza con patatine" class="menu-image">
-                        <h3 class="name" data-en="Pizza with Fries" data-it="Pizza con Patatine">Pizza with Patatine</h3>
-
-                      
-                    </li>   
                     <li class="menu-item" onclick="openMenu('bufala')">
-                        <img src="pizbuf.jpg" alt="pizza con Bufala" class="menu-image">
+                        <img src="pizbuf.jpg" alt="Pizza con Bufala" class="menu-image">
                         <h3 class="name" data-en="Pizza with Bufala" data-it="Pizza con Bufala">Pizza with Bufala</h3>
-                     
                     </li>
-
-
+                    <li class="menu-item" onclick="openMenu('radicchio')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Radicchio" class="menu-image">
+                        <h3 class="name" data-en="Radicchio Pizzas" data-it="Pizze con Radicchio">Radicchio Pizzas</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('affettati')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Affettati" class="menu-image">
+                        <h3 class="name" data-en="Pizzas with Cold Cuts" data-it="Pizze con Affettati">Pizzas with Affettati</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('porchetta')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Porchetta" class="menu-image">
+                        <h3 class="name" data-en="Pizzas with Porchetta" data-it="Pizze con Porchetta">Pizzas with Porchetta</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('pancetta')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Pancetta" class="menu-image">
+                        <h3 class="name" data-en="Pizzas with Pancetta" data-it="Pizze con Pancetta">Pizzas with Pancetta</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('provola')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Provola" class="menu-image">
+                        <h3 class="name" data-en="Pizzas with Provola" data-it="Pizze con Provola">Pizzas with Provola</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('special_condimenti')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Special Ingredients" class="menu-image">
+                        <h3 class="name" data-en="Gourmet Ingredients" data-it="Ingredienti Speciali">Gourmet Ingredients</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('patatine')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="pizza con patatine" class="menu-image">
+                        <h3 class="name" data-en="Pizza with Fries" data-it="Pizza con Patatine">Pizza with Patatine</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('bianche')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Pizze Bianche" class="menu-image">
+                        <h3 class="name" data-en="White Pizzas" data-it="Pizze Bianche">White Pizzas</h3>
+                    </li>
+                    <li class="menu-item" onclick="openMenu('calzoni')">
+                        <img src="JPEG image-4E86-AC6A-47-0.jpeg" alt="Calzoni & Baguettes" class="menu-image">
+                        <h3 class="name" data-en="Calzoni & Baguettes" data-it="Calzoni e Baguette">Calzoni & Baguette</h3>
+                    </li>
                     <li class="menu-item" onclick="openMenu('frittura')">
-                        <img src="patate-fritte.jpg" alt="Frittura " class="menu-image">
-                        <h3 class="name" data-en="Fried Food" data-it="Frittura">Frying</h3>
-                        
+                        <img src="patate-fritte.jpg" alt="Frittura" class="menu-image">
+                        <h3 class="name" data-en="Fried Food & Kebab" data-it="Frittura e Kebab">Fried Food & Kebab</h3>
                     </li>
-
-
-                       
-                    </li>
-
                     <li class="menu-item" onclick="openMenu('drinks')">
                         <img src="drinkss.webp" alt="Drinks" class="menu-image">
                         <h3 class="name" data-en="Drinks" data-it="Bevande">Drinks</h3>
-
                     </li>
-                       
-                    </li>
-
-
                 </ul>
-
             </div>
         </section>
 
@@ -265,40 +282,78 @@
         <section class="gallery-section reveal" id="gallery">
             <h2 class="section-title" data-en="Gallery" data-it="Galleria">Gallery</h2>
             <div class="section-content">
-                <ul class="photo-list">
+                <div class="slider-container swiper">
+                    <div class="slider-wrapper">
+                        <ul class="photo-list swiper-wrapper">
                     
-                    <li class="photo-item">
-                        <img src="pizza2.jpg" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="pizza2.jpg" alt="photo" class="pizza-photos">
                     </li>
                     
-                    <li class="photo-item">
-                        <img src="IMG_2787.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2787.JPG" alt="photo" class="pizza-photos ">
                     </li>
-                    <li class="photo-item">
-                        <img src="IMG_2788.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2788.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
-                        <img src="IMG_2789.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2789.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
-                        <img src="IMG_2790.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2790.JPG" alt="photo" class="pizza-photos ">
                     </li>
-                    <li class="photo-item">
-                        <img src="IMG_2791.JPG" alt="photo" class="pizza-photos parallax" data-speed="0.2">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2791.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
+                    <li class="photo-item swiper-slide">
                         <img src="IMG_2792.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
+                    <li class="photo-item swiper-slide">
                         <img src="IMG_2793.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
+                    <li class="photo-item swiper-slide">
                         <img src="IMG_2794.JPG" alt="photo" class="pizza-photos">
                     </li>
-                    <li class="photo-item">
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2795.JPG" alt="photo" class="pizza-photos">
+                    </li>
+
+
+
+
+                    <li class="photo-item swiper-slide">
+                        <img src="pizza2.jpg" alt="photo" class="pizza-photos">
+                    </li>
+                    
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2787.JPG" alt="photo" class="pizza-photos ">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2788.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2789.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2790.JPG" alt="photo" class="pizza-photos ">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2791.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2792.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2793.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
+                        <img src="IMG_2794.JPG" alt="photo" class="pizza-photos">
+                    </li>
+                    <li class="photo-item swiper-slide">
                         <img src="IMG_2795.JPG" alt="photo" class="pizza-photos">
                     </li>
                 </ul>
+                </div>
             </div>
 
 
@@ -402,9 +457,9 @@
          </footer>
     </main>
 
-    <div id="menu-panel" class="menu-panel">
+    <div id="menu-panel" class="menu-panel" onclick="closeMenu()">
 
-        <div class="menu-panel-content">
+        <div class="menu-panel-content" onclick="event.stopPropagation()">
     
             <span class="close-panel" onclick="closeMenu()">&times;</span>
     
@@ -413,6 +468,8 @@
             <ul id="panel-list"></ul>
     
         </div>
+    
+    </div>
     
     </div>
     <!--Linking swipper script-->
