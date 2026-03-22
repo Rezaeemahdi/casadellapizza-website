@@ -303,7 +303,9 @@ else if (type === "Drinks / Bevande") {
    
     
 
-
+panel.classList.add("active");
+    // FREEZE THE BACKGROUND
+    document.body.classList.add("modal-open");
     
     /* ===== RENDER ===== */
     
@@ -350,6 +352,7 @@ else if (type === "Drinks / Bevande") {
         const panel = document.getElementById('menu-panel');
         panel.style.display = 'none'; 
         // If you use a class for animations, make sure it also sets display: none at the end
+        document.body.classList.remove("modal-open");
     }
 
 
