@@ -1364,14 +1364,18 @@ body.show-mobile-menu header::before{
 
 @media screen and (max-width:640px){
 
-.menu-section .menu-list{
-    gap: 60px;
-}
+    .menu-section .menu-list {
+        gap: 30px; 
+        justify-content: center; /* Center the items */
+        flex-direction: column; /* Stack them vertically */
+    }
 
-.menu-section .menu-list .menu-item{
-width:100%;
-}
-
+    .menu-section .menu-list .menu-item {
+        width: 100%; /* Now 100% works because direction is column */
+        max-width: 280px; /* Keeps the pizza cards from looking too stretched */
+        margin: 0 auto; /* Centers the card */
+    }
+    
 .gallery-section .photo-list .photo-item{
 width:100%;
 }
