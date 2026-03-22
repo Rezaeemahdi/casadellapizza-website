@@ -243,6 +243,7 @@ function openMenu(type) {
         items = [
             {name: "Noci, Gorgonzola e Speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"}
         ];
+        
     } else if (type === "patatine") {
         title.innerText = "Pizze con Patatine Fritte";
         items = [
@@ -300,7 +301,7 @@ else if (type === "Drinks / Bevande") {
         {name: "Heineken", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
         {name: "Corona", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
         {name: "Moretti", priceN: "€3.50", priceM: "N/A", ingredients: "Birra in Bottiglia (66cl)"},
-        {name: "Peroni", priceN: "€3.50", priceM: "N/A", ingredients: " Birra in Bottiglia (66cl)"},
+        {name: "Peroni", priceN: "€3.50", priceM: "N/A", ingredients: " Birra in Bottiglia (66cl)"}
     ];
 }
    
