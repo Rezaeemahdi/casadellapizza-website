@@ -825,6 +825,45 @@ font-weight:bold;
 }
 
 
+/* 1. The background overlay */
+.cart-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* FIX: Use dvh instead of vh */
+    height: 100dvh; 
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This keeps it centered even on tall phones */
+    z-index: 1000;
+}
+
+/* 2. The actual white box with the button */
+.cart-content {
+    background: white;
+    width: 420px;
+    /* FIX: Reduce max-height to ensure it never hits the bottom edge */
+    max-height: 85dvh; 
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* IMPORTANT: Ensure everything inside is scrollable if it's too long */
+    overflow-y: auto; 
+    position: relative;
+    margin-bottom: 20px; /* Pushes it up away from the iPhone home bar */
+}
+
+/* 3. The Checkout/WhatsApp Button Area */
+.checkout-form {
+    /* Ensure the form doesn't grow too large */
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 20px; /* Space so the button isn't at the very edge */
+}
+
 /* ===================================================== */
 /* CHECKOUT FORM                                         */
 /* ===================================================== */
@@ -940,6 +979,14 @@ width:100%;
 padding:10px;
 background:#eee;
 border-radius:8px;
+}
+
+/* Prevent background scrolling */
+body.modal-open {
+    overflow: hidden;
+    height: 100vh;
+    /* Optional: prevents "shifting" if the scrollbar disappears */
+    padding-right: 0px; 
 }
 
 

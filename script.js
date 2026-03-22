@@ -176,6 +176,10 @@ function openMenu(type) {
             {name: "Gustosa", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., gorgonzola, ricotta, speck"},
             {name: "Fenice", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola, porcini"},
             {name: "Della Casa", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., prosc. cotto, carciofi, wurstel, asparagi, uovo"},
+            {name: "Ricotta, Spinaci e Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
+            {name: "Pomodori Secchi e 5 Formaggi", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pomodori secchi, 5 formaggi"},
+            {name: "Gamberetti e Porcini", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., tartufo, porcini"},
+            {name: "Cavallina (Sfilacci)", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., sfilacci di cavallo"},
             {name: "Preferita", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., scamorza, misto bosco, rucola, prosc. cotto, sal. picc."}
         ];
     } else if (type === "bufala") {
@@ -234,13 +238,9 @@ function openMenu(type) {
             {name: "6 Formaggi", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz., provola, 5 formaggi"},
             {name: "Provola, Funghi, Peperoni, Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., provola, funghi, peperoni, gorgonzola"}
         ];
-    } else if (type === "special_condimenti") {
-        title.innerText = "Ingredienti Gourmet";
+    } else if (type === "Pizza con noci") {
+        title.innerText = "Pizza con noci";
         items = [
-            {name: "Ricotta, Spinaci e Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
-            {name: "Pomodori Secchi e 5 Formaggi", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pomodori secchi, 5 formaggi"},
-            {name: "Gamberetti e Porcini", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., tartufo, porcini"},
-            {name: "Cavallina (Sfilacci)", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., sfilacci di cavallo"},
             {name: "Noci, Gorgonzola e Speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"}
         ];
     } else if (type === "patatine") {
@@ -270,7 +270,7 @@ function openMenu(type) {
             {name: "Baguette Speck, Rucola e Brie", priceN: "€8.50", priceM: "N/A", ingredients: "mozz., speck, rucola, brie"}
         ];
     } else if (type === "frittura") {
-        title.innerText = "Frittura e Kebab";
+        title.innerText = "Frittura ";
         items = [
             {name: "Crocchette di Patate ", priceN: "€4.50", priceM: "N/A", ingredients: "(8 pezzi)"},
             {name: "Chicken Nuggets ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
@@ -295,7 +295,10 @@ else if (type === "Drinks / Bevande") {
         {name: "Fanta", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
         {name: "Sprite", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
         {name: " Estathé", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
-        {name: "Birra in Bottiglia  (33cl)", priceN: "€3,00", priceM: "N/A", ingredients: "Birre varie"},
+        {name: "Tenet's", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
+        {name: "Becks", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
+        {name: "Heineken", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
+        {name: "Corona", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
         {name: "Moretti", priceN: "€3.50", priceM: "N/A", ingredients: "Birra in Bottiglia (66cl)"},
         {name: "Peroni", priceN: "€3.50", priceM: "N/A", ingredients: " Birra in Bottiglia (66cl)"},
     ];
@@ -503,7 +506,8 @@ updateCart()
 function openCart(){
 
 document.getElementById("cart-window").classList.add("active")
-
+// FREEZE BACKGROUND
+document.body.classList.add("modal-open");
 }
 
 
@@ -513,7 +517,8 @@ document.getElementById("cart-window").classList.add("active")
 function closeCart(){
 
 document.getElementById("cart-window").classList.remove("active")
-
+// UNFREEZE BACKGROUND
+document.body.classList.remove("modal-open");
 }
 
 
@@ -540,20 +545,24 @@ summaryHTML+=`<br><strong>Total: €${total.toFixed(2)}</strong>`
 summaryBox.innerHTML=summaryHTML
 
 document.getElementById("order-confirmation").classList.add("active")
-
+// ENSURE BACKGROUND IS FROZEN
+document.body.classList.add("modal-open");
 }
 
 
 
 
 /* Close confirmation popup */
-
-function closeConfirmation(){
-
-document.getElementById("order-confirmation").classList.remove("active")
-
+function closeConfirmation() {
+    document.getElementById("order-confirmation").classList.remove("active");
+    
+    // Only remove modal-open if the Cart window is ALSO closed.
+    // If you return to the cart, keep it frozen.
+    const cartActive = document.getElementById("cart-window").classList.contains("active");
+    if (!cartActive) {
+        document.body.classList.remove("modal-open");
+    }
 }
-
 
 
 
@@ -566,31 +575,19 @@ function sendWhatsAppOrder(){
 
     /* ================= 1. VALIDATION CHECK (THE NEW PART) ================= */
     
-    const name = document.getElementById("customer-name").value.trim();
-    const phone = document.getElementById("customer-phone").value.trim();
-    const orderType = document.getElementById("order-type").value;
-    const time = document.getElementById("order-time").value;
-    const address = document.getElementById("customer-address").value.trim();
+   
+     /*
+     const orderType = document.getElementById("order-type").value;
+     const time = document.getElementById("order-time").value;
+     const name = document.getElementById("customer-name").value;
+     const phone = document.getElementById("customer-phone").value;
+     const address = document.getElementById("customer-address").value;
+    const doorbell = document.getElementById("customer-doorbell").value;
+    const note = document.getElementById("order-note").value;
+    */
 
-    // Check if cart is empty
-    if (cart.length === 0) {
-        alert("Il carrello è vuoto! / Your cart is empty!");
-        return; // Stops the function
-    }
-
-    // Check basic fields
-    if (!name || !phone || !time) {
-        alert("Per favore inserisci Nome,Numero di telefono e Orario. / Please enter name, phone number, and time.");
-        return; // Stops the function
-    }
-
-    // If it's delivery, check for address
-    if (orderType === "delivery" && !address) {
-        alert("Per favore inserisci l'indirizzo per la consegna. / Please enter the delivery address.");
-        return; // Stops the function
-    }
-
-
+    
+   
     let lang = localStorage.getItem("lang") || "en";
     
     /* ================= TEXTS ================= */
@@ -640,6 +637,35 @@ function sendWhatsAppOrder(){
     message += `%0A*${t.total}: €${total.toFixed(2)}*%0A%0A`;
     
     /* ================= CUSTOMER ================= */
+
+
+    const name = document.getElementById("customer-name").value.trim();
+    const phone = document.getElementById("customer-phone").value.trim();
+    const orderType = document.getElementById("order-type").value;
+    const time = document.getElementById("order-time").value;
+    const address = document.getElementById("customer-address").value.trim();
+    const doorbell = document.getElementById("customer-doorbell").value;
+    const note = document.getElementById("order-note").value;
+
+     // Check if cart is empty
+     if (cart.length === 0) {
+        alert("Il carrello è vuoto! / Your cart is empty!");
+        return; // Stops the function
+    }
+
+    // Check basic fields
+    if (!name || !phone || !time) {
+        alert("Per favore inserisci Nome,Numero di telefono e Orario. / Please enter name, phone number, and time.");
+        return; // Stops the function
+    }
+
+    // If it's delivery, check for address
+    if (orderType === "delivery" && !address) {
+        alert("Per favore inserisci l'indirizzo per la consegna. / Please enter the delivery address.");
+        return; // Stops the function
+    }
+
+
       /*
     const orderType = document.getElementById("order-type").value;
     const time = document.getElementById("order-time").value;
