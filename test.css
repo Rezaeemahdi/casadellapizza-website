@@ -358,7 +358,8 @@ pointer-events:auto;
     padding:25px;
     border-radius:15px;
     width:420px;
-    max-width:90%;
+    max-width:70%;
+    
     
     /* 🔥 IMPORTANT */
     max-height:80vh;
@@ -591,7 +592,7 @@ color:white;
 .photo-list {
     display: flex;
     width: max-content; /* Prevents the images from squeezing */
-    animation: infiniteRoll 30s linear infinite; /* 'linear' is vital for smoothness */
+    animation: infiniteRoll 30s  linear infinite; /* 'linear' is vital for smoothness */
 }
 
 /* --- UPDATED: Warm Masking Effect on Edges --- */
