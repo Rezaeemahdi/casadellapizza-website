@@ -1432,38 +1432,7 @@ body.show-mobile-menu header::before{
         }
 
 
-  @media screen and (max-width:640px) {
-    .menu-section {
-        padding: 40px 10px;
-        /* removed overflow:hidden */
-    }
 
-    .menu-section .menu-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        width: 100%;
-    }
-
-    .menu-section .menu-list .menu-item {
-        width: 190px;
-        max-width: 260px;
-        flex: 0 0 auto;
-        margin: 0 auto;
-        position: relative;
-        z-index: 99;
-    }
-
-    .menu-section .menu-list .menu-item .menu-image {
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-    }
-}
 .gallery-section .photo-list .photo-item{
 width:100%;
 }
@@ -1474,7 +1443,7 @@ display:none;
 
 @media screen and (max-width: 480px) {
     .menu-section {
-        padding: 30px 0 60px;
+        padding: 10px 0 40px;
     }
 
     .menu-section .menu-list {
@@ -1489,8 +1458,8 @@ display:none;
     }
 
     .menu-section .menu-list .menu-item .menu-image {
-        width: 100px;
-        height: 100px;
+        width: 100%;
+        height: 100%;
     }
 
     .menu-section .menu-list .menu-item .name {
