@@ -290,41 +290,52 @@ color:white;
 /* MENU SECTION                                          */
 /* ===================================================== */
 
-.menu-section{
-background-color:#FFF3E8;
-color:black;
-padding:50px 0 100px;
+.menu-section {
+    background-color: #FFF3E8;
+    color: black;
+    padding: 50px 0 100px;
+    position: relative;
+    z-index: 1; /* Ensures it stays above any background layers */
+    width: 100%;
+    display: block !important; /* Forces it to show */
 }
-
-.menu-section .menu-list{
+.menu-section .menu-list {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; /* Reduced gap for mobile compatibility */
-    justify-content: center; /* Center items so they don't lean left */
-    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px; /* Standard gap */
+    justify-content: center; /* This prevents the "white space" on the right */
+    align-items: flex-start;
+    width: 100%;
+    z-index: 9999;
 }
 
-.menu-section .menu-list .menu-item{
+.menu-section .menu-list .menu-item {
     display: flex;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    padding: 15px;
-    background: #fff; /* Ensures the card itself has a background */
-    border-radius: 15px;
+    justify-content: space-between;
     
-    /* FIX FOR IPHONE: Use flex-basis for better scaling */
-    flex: 1 1 280px; /* Grow, Shrink, and a Base width of 280px */
-    max-width: 350px; /* Prevents cards from getting too huge on iPads */
+    /* FIX: Replace the calc math with this */
+    flex: 1 1 250px; 
+    max-width: 320px;
+    
+    z-index: 9999;
+    padding: 15px;
+    background: #fff; /* Ensure it's not transparent */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Makes the card visible against the peach background */
+    cursor: pointer;
 }
-
-.menu-section .menu-list .menu-item .menu-image{
-max-width:100%;
-border-radius:20%;
-margin-bottom:15px;
-object-fit:contain;
+.menu-section .menu-list .menu-item .menu-image {
+    width: 180px; /* Fixed width */
+    height: 180px; /* Fixed height */
+    max-width: 100%;
+    border-radius: 20%;
+    margin-bottom: 15px;
+    object-fit: cover; /* Keeps pizza photo from stretching */
+    display: flex; /* Prevents it from being ignored by the browser */
 }
-
 .menu-section .menu-list .menu-item .name{
 margin:12px 0;
 font-size:large;
@@ -350,13 +361,13 @@ backdrop-filter:blur(5px);
 opacity:0;
 pointer-events:none;
 transition:0.3s ease;
-z-index:9999;
+z-index:100;
 }
 
 .menu-panel.active{
 opacity:1;
 pointer-events:auto;
-z-index:9999;
+z-index:100;
 }
 
 /* This class will be toggled by JavaScript */
@@ -1364,15 +1375,15 @@ body.show-mobile-menu .navbar .nav-menu {
                 width: 100%; height: 100%; max-width: 350px; aspect-ratio: 1; 
             }
 
-            .menu-section .menu-list{ gap: 20px; }
+            .menu-section .menu-list{ gap: 30px; }
             
-            .menu-section .menu-list .menu-item{ width: calc(100% / 2 - 20px); }
+            .menu-section .menu-list .menu-item{ width: calc(100% / 2 - 30px); }
 
             .menu-section .menu-list .menu-item .menu-image{ max-width: 200px; }
             .gallery-section .photo-lis{ gap: 30px; }
 
             .gallery-section .photo-list .photo-item{
-                 width: calc(100% / 2 - 20px); 
+                 width: calc(100% / 2 - 30px); 
             }
              
             .contact-section .section-content{ 
@@ -1421,25 +1432,37 @@ body.show-mobile-menu header::before{
         }
 
 
-@media screen and (max-width:640px){
+  @media screen and (max-width:640px) {
+    .menu-section {
+        padding: 40px 10px;
+        /* removed overflow:hidden */
+    }
 
     .menu-section .menu-list {
-        gap: 20px; 
-        justify-content: center; /* Center the items */
-        flex-direction: column; /* Stack them vertically */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
     }
 
     .menu-section .menu-list .menu-item {
-        width: 90%; /* Now 100% works because direction is column */
-        max-width: 280px; /* Keeps the pizza cards from looking too stretched */
-        margin: 0 auto; /* Centers the card */
-        flex: none;
+        width: 200px;
+        max-width: 260px;
+        flex: 0 0 auto;
+        margin: 0 auto;
+        position: relative;
+        z-index: 99;
     }
-/* Ensure the image is visible */
-.menu-section .menu-list .menu-item .menu-image {
-    width: 150px;
-    height: 150px;
-    display: block;
+
+    .menu-section .menu-list .menu-item .menu-image {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
 }
 .gallery-section .photo-list .photo-item{
 width:100%;
@@ -1449,7 +1472,6 @@ width:100%;
 display:none;
 }
 
-}
 
 
 
