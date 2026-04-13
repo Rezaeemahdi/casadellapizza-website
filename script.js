@@ -714,7 +714,9 @@ function sendWhatsAppOrder(){
     }
 
 
-
+    function openMap(){
+        window.open("https://www.google.com/maps/dir/?api=1&destination=Via+Michelangelo+Buonarroti+14+Padova", "_blank");
+    }
 
 
 /* ===================================================== */
@@ -979,3 +981,8 @@ window.addEventListener("scroll", () => {
     });
     
     });
+
+
+
+    
+
