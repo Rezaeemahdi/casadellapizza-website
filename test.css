@@ -831,13 +831,22 @@ font-size:16px;
 }
 
 .checkout-btn{
-margin-top:20px;
-width:100%;
-padding:12px;
-background:brown;
-color:white;
-border-radius:8px;
-font-weight:bold;
+    margin-top:10px;
+    width:100%;
+    padding:12px;
+    background:lightgreen;
+    color:black;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s ease;
+    }
+    
+    .checkout-btn:hover{
+    color: white;
+    background:green;
+    transform:scale(1.03);
+    }
 }
 
 
@@ -920,6 +929,8 @@ transition:0.25s ease;
 }
 
 .order-type-buttons button:hover{
+    color: white;
+    background-color: brown;
 transform:translateY(-2px);
 box-shadow:0 6px 12px rgba(0,0,0,0.15);
 }
@@ -1449,12 +1460,14 @@ display:none;
     .menu-section .menu-list {
         gap: 14px;
         padding: 0 10px;
+        
     }
 
     .menu-section .menu-list .menu-item {
         flex: 0 0 calc(50% - 14px); /* still 2 columns even on SE */
         max-width: calc(50% - 14px);
         padding: 14px 10px;
+        
     }
 
     .menu-section .menu-list .menu-item .menu-image {
@@ -1508,3 +1521,22 @@ font-size:16px !important;
     transform: translateY(-5px) scale(1.03);
     transition: 0.3s ease;
     }
+
+
+
+    .call-btn{
+        margin-top:10px;
+        width:100%;
+        padding:12px;
+        background:brown;
+        color:white;
+        border-radius:8px;
+        font-weight:bold;
+        font-size:16px;
+        transition:0.3s ease;
+        }
+        
+        .call-btn:hover{
+        background:brown;
+        transform:scale(1.03);
+        }

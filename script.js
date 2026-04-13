@@ -709,6 +709,10 @@ function sendWhatsAppOrder(){
     
     }
 
+    function callShop(){
+        window.location.href = "tel:0492210670";
+    }
+
 
 
 
