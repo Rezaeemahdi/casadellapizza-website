@@ -304,13 +304,9 @@ color:white;
     display: block !important; /* Forces it to show */
 }
 .menu-section .menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Standard gap */
-    justify-content: center; /* This prevents the "white space" on the right */
-    align-items: flex-start;
-    width: 100%;
-    z-index: 9999;
+   display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
 }
 
 .menu-section .menu-list .menu-item {
@@ -325,11 +321,12 @@ color:white;
     max-width: 320px;
     
     z-index: 9999;
-    padding: 15px;
+    padding: 20px 16px 24px;
     background: #fff; /* Ensure it's not transparent */
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Makes the card visible against the peach background */
     cursor: pointer;
+     gap: 12px
 }
 .menu-section .menu-list .menu-item .menu-image {
     width: 180px; /* Fixed width */
