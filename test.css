@@ -295,54 +295,56 @@ color:white;
 /* ===================================================== */
 
 .menu-section {
-    background-color: #FFF3E8;
-    color: black;
-    padding: 50px 0 100px;
-    position: relative;
-    z-index: 1; /* Ensures it stays above any background layers */
-    width: 100%;
-    display: block !important; /* Forces it to show */
+  background-color: #FFF3E8;
+  color: black;
+  padding: 50px 0 100px;
+  position: relative;
+  z-index: 1; /* Ensures it stays above any background layers */
+  width: 100%;
+  display: block !important; /* Forces it to show */
 }
 .menu-section .menu-list {
-   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 28px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px; /* Standard gap */
+  justify-content: center; /* This prevents the "white space" on the right */
+  align-items: flex-start;
+  z-index: 9999;
 }
 
 .menu-section .menu-list .menu-item {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    /* FIX: Replace the calc math with this */
-    flex: 1 1 250px; 
-    max-width: 320px;
-    
-    z-index: 9999;
-    padding: 20px 16px 24px;
-    background: #fff; /* Ensure it's not transparent */
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Makes the card visible against the peach background */
-    cursor: pointer;
-     gap: 12px
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+height: 160px;
+width: 160px;
+  z-index: 9999;
+  padding: 20px 16px 24px;
+  background: #fff; /* Ensure it's not transparent */
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px rgba(6, 5, 5, 0.05); /* Makes the card visible against the peach background */
+  cursor: pointer;
+  gap: 12px;
 }
 .menu-section .menu-list .menu-item .menu-image {
-    width: 180px; /* Fixed width */
-    height: 180px; /* Fixed height */
-    max-width: 100%;
-    border-radius: 20%;
-    margin-bottom: 15px;
-    object-fit: cover; /* Keeps pizza photo from stretching */
-    display: flex; /* Prevents it from being ignored by the browser */
+  width: 100%; /* Fixed width */
+  height: 100%; /* Fixed height */
+ 
+  border-radius: 20%;
+  
+  object-fit: cover; /* Keeps pizza photo from stretching */
+  display: flex; /* Prevents it from being ignored by the browser */
 }
 .menu-section .menu-list .menu-item .name{
-margin:12px 0;
-font-size:large;
-font-weight:bold;
-}
 
+font-size: 1rem;
+font-weight: 700;
+}
 
 /* ===================================================== */
 /* MENU POPUP PANEL                                      */
@@ -362,7 +364,7 @@ backdrop-filter:blur(5px);
 opacity:0;
 pointer-events:none;
 transition:0.3s ease;
-z-index:100;
+z-index:500;
 }
 
 .menu-panel.active{
@@ -382,7 +384,8 @@ body.modal-open {
     padding:25px;
     border-radius:15px;
     width:420px;
-    max-width:70%;
+
+    max-width:95%;
 
     
     /* 🔥 IMPORTANT */
@@ -452,16 +455,24 @@ color:brown;
 }
 
 .add-btn{
+  background-color: brown;
+  color: white;
+  border-radius: 999px;
+  border: none;
     display: flex;
-    border-radius: 2%;
-
+    flex-wrap: wrap;
+ gap: 20px;
+ padding: 7px 16px;
+ font-size: 0.82rem;
+ font-weight: 700;
+  cursor: pointer;
 }
 
 .add-btn:hover{
-    background-color:#B9C3AA;
+    background-color:firebrick;
     transition: 0.3s ease;
-    transform:translateY(-3px);
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transform:translateY(-2px);
+    box-shadow: 0 4px 12px rgba(181, 52, 30, 0.3);
 
 }
 
@@ -765,207 +776,180 @@ z-index:200;
 font-weight:bold;
 margin-left:6px;
 }
-
-.cart-window{
-
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:rgba(0,0,0,0.5);
-display:flex;
-justify-content:flex-end;
-align-items:center;
-z-index:1000;
-opacity:0;
-pointer-events:none;
-transition:0.3s;
+/* ===================================================== */
+/* 1. THE BACKGROUND OVERLAY                             */
+/* ===================================================== */
+.cart-window {
+  padding: auto;
+  
+  border:#b22222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh; /* Perfect for mobile, ignores browser UI bars */
+  background: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  display: flex;
+  justify-content: flex-end; /* Sticks the cart to the right side */
+  align-items: stretch;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding-bottom: 20px;
 }
 
-.cart-window.active{
-opacity:1;
-pointer-events:auto;
+.cart-window.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.cart-content{
-background:white;
-width:420px;
-max-height:90vh;
-border-radius:12px;
-padding:20px;
-display:flex;
-flex-direction:column;
-overflow:hidden;
-
-
-height: 100%;
-
-transform: translateX(100%);
-transition: 0.6s ease;
+/* ===================================================== */
+/* 2. THE SLIDING CART PANEL                             */
+/* ===================================================== */
+.cart-content {
+  border-radius: 5%;
+  border: #b22222;
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  height: 100dvh;
+  padding: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* Hides it off-screen to the right */
+  transition: transform 0.4s ease;
+  
+  /* SCROLL FIX: We only put the scrollbar on THIS main container. */
+  overflow-y: auto; 
+  scrollbar-width: thin;
 }
 
 .cart-window.active .cart-content {
-    transform: translateX(0);
-    }
-
-#cart-items{
-max-height:200px;
-overflow-y:auto;
-margin:10px 0;
-padding-right:6px;
+  transform: translateX(0); /* Slides it in */
 }
 
-.cart-row{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
+/* ===================================================== */
+/* 3. CART ITEMS LIST                                    */
+/* ===================================================== */
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px 0;
+  padding-right: 6px;
+  /* SCROLL FIX: Removed nested max-height and overflow-y here */
 }
 
-.cart-controls{
-display:flex;
-align-items:center;
-gap:6px;
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.cart-controls button{
-background:brown;
-color:white;
-border-radius:5px;
-padding:2px 8px;
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.remove-btn{
-background:none;
-color:red;
-font-size:16px;
+.cart-controls button {
+  background: brown;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.checkout-btn{
-    margin-top:10px;
-    width:100%;
-    padding:12px;
-    background:#25D366;
-    color:black;
-    border-radius:8px;
-    font-weight:bold;
-    font-size:16px;
-    transition:0.3s ease;
-    }
-    
-    .checkout-btn:hover{
-    color: white;
-    background:green;
-    transform:scale(1.03);
-    }
-
-
-
-/* 1. The background overlay */
-.cart-window {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* FIX: Use dvh instead of vh */
-    height: 100dvh; 
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center; /* This keeps it centered even on tall phones */
-    z-index: 1000;
+.remove-btn {
+  background: none !important;
+  color: red !important;
+  font-size: 16px;
 }
 
-/* 2. The actual white box with the button */
-.cart-content {
-    background: white;
-    width: 420px;
-    /* FIX: Reduce max-height to ensure it never hits the bottom edge */
-    max-height: 85dvh; 
-    border-radius: 12px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    /* IMPORTANT: Ensure everything inside is scrollable if it's too long */
-    overflow-y: auto; 
-    position: relative;
-    margin-bottom: 20px; /* Pushes it up away from the iPhone home bar */
-}
-
-/* 3. The Checkout/WhatsApp Button Area */
+/* ===================================================== */
+/* 4. CHECKOUT FORM                                      */
+/* ===================================================== */
 .checkout-form {
-    /* Ensure the form doesn't grow too large */
-    flex-grow: 1;
-    overflow-y: auto;
-    padding-bottom: 20px; /* Space so the button isn't at the very edge */
-}
-
-/* ===================================================== */
-/* CHECKOUT FORM                                         */
-/* ===================================================== */
-
-.checkout-form{
-margin-top:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-max-height:45vh;
-overflow-y:auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1; /* Pushes the checkout button to the bottom */
+  padding-bottom: 20px; /* Safe space for the iPhone home bar */
+  /* SCROLL FIX: Removed nested max-height and overflow-y here */
 }
 
 .checkout-form input,
-.checkout-form select{
-padding:8px;
-border:1px solid #ccc;
-border-radius:6px;
+.checkout-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
-
 
 /* Order type buttons */
-
-.order-type-buttons{
-display:flex;
-gap:12px;
-margin-bottom:15px;
+.order-type-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
 }
 
-.order-type-buttons button{
-flex:1;
-padding:12px;
-border-radius:30px;
-border:2px solid brown;
-background:white;
-font-weight:600;
-transition:0.25s ease;
+.order-type-buttons button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid brown;
+  background: white;
+  font-weight: 600;
+  transition: 0.25s ease;
+  cursor: pointer;
 }
 
-.order-type-buttons button:hover{
-    color: white;
-    background-color: brown;
-transform:translateY(-2px);
-box-shadow:0 6px 12px rgba(0,0,0,0.15);
+.order-type-buttons button:hover {
+  color: white;
+  background-color: brown;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.order-btn-active{
-background:brown;
-color:brown;
+.order-btn-active {
+  background: brown !important;
+  color: white !important; 
 }
-
 
 /* Order note */
+#order-note {
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 
-#order-note{
-width:100%;
-min-height:90px;
-resize:vertical;
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:14px;
-margin-top:5px;
-margin-bottom:10px;
+.checkout-btn {
+  margin-top: auto; 
+  width: 100%;
+  padding: 12px;
+  background: #007b2d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  color: white;
+  background: green;
+  transform: scale(1.03);
 }
 
 
@@ -1547,7 +1531,7 @@ font-size:16px !important;
         margin-top:10px;
         width:100%;
         padding:12px;
-        background:#7C0A02;
+        background:#c51306;
         color:white;
         border-radius:8px;
         font-weight:bold;
