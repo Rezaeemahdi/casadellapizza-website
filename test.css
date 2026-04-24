@@ -304,7 +304,6 @@ color:white;
   display: block !important; /* Forces it to show */
 }
 .menu-section .menu-list {
-<<<<<<< HEAD
   
   display: flex;
   flex-wrap: wrap;
@@ -331,31 +330,6 @@ width: 160px;
   box-shadow: 4px 4px 15px rgba(6, 5, 5, 0.05); /* Makes the card visible against the peach background */
   cursor: pointer;
   gap: 12px;
-=======
-   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 28px;
-}
-
-.menu-section .menu-list .menu-item {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    /* FIX: Replace the calc math with this */
-    flex: 1 1 250px; 
-    max-width: 320px;
-    
-    z-index: 9999;
-    padding: 20px 16px 24px;
-    background: #fff; /* Ensure it's not transparent */
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Makes the card visible against the peach background */
-    cursor: pointer;
-     gap: 12px
->>>>>>> c56c8fc9f3621264f6b632e6f53d18ebd9997f83
 }
 .menu-section .menu-list .menu-item .menu-image {
   width: 100%; /* Fixed width */
