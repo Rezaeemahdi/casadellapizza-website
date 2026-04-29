@@ -307,7 +307,7 @@ color:white;
   
   display: flex;
   flex-wrap: wrap;
-  gap: 18px; /* Standard gap */
+  gap: 28px; /* Standard gap */
   justify-content: center; /* This prevents the "white space" on the right */
   align-items: flex-start;
   z-index: 9999;
@@ -318,10 +318,11 @@ color:white;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+
   flex-shrink: 0;
 
-height: 160px;
+height: 220px;
 width: 160px;
   z-index: 9999;
   padding: 20px 16px 24px;
@@ -329,21 +330,25 @@ width: 160px;
   border-radius: 20px;
   box-shadow: 4px 4px 15px rgba(6, 5, 5, 0.05); /* Makes the card visible against the peach background */
   cursor: pointer;
-  gap: 12px;
+  gap: 18px;
 }
 .menu-section .menu-list .menu-item .menu-image {
-  width: 100%; /* Fixed width */
-  height: 100%; /* Fixed height */
+  width: 130px; /* Fixed width */
+  height: 100px; /* Fixed height */
  
-  border-radius: 20%;
+  border-radius: 15px;
   
   object-fit: cover; /* Keeps pizza photo from stretching */
   display: flex; /* Prevents it from being ignored by the browser */
 }
 .menu-section .menu-list .menu-item .name{
 
-font-size: 1rem;
+font-size: 1.1rem;
 font-weight: 700;
+width: 100%;
+white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ===================================================== */

@@ -178,7 +178,29 @@ function openMenu(type) {
             {name: "Della Casa", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., prosc. cotto, carciofi, wurstel, asparagi, uovo"},
             {name: "Ricotta, Spinaci e Gorgonzola", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
             {name: "Pomodori Secchi e 5 Formaggi", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., pomodori secchi, 5 formaggi"},
-            {name: "Gamberetti e Porcini", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., tartufo, porcini"},
+            {name: "Gamberetti e Porcini", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz.,Gamberetti, porcini"},
+
+            {name: "Gamberetti ", priceN: "€8.00", priceM: "€16,00", ingredients: "pom., mozz., porcini"},
+            {name: "Gamberetti e salsa rosa ", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., Gamberetti e salsa rosa  "},
+            {name: "Gamberetti e zuchinne ", priceN: "€8.80", priceM: "€17,40", ingredients: "pom., mozz.,Gamberetti e zuchinne "},
+
+            {name: "Pesto, Salamino, Grana", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz.,pesto, sal. picc., grana"},
+            {name: "Pesto, Salsiccia e Melanzane", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz.,pesto, salsiccia e melanzane"},
+            
+
+            {name: "Pesto, Rucola, Grana, Pomodorini", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz.,rucola, grana, pomodorini"},
+            
+            {name: "Patate lesse e Gorgonzola", priceN: "€7.00", priceM: "€14,00", ingredients: "pom., mozz.,patate lesse gorgonzola"},
+            {name: "Patate lesse e Salamino", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz.,patate lesse salamino piccante"},
+            {name: "Patate lesse e Salsiccia", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz.,patate lesse, salsiccia"},
+            {name: " Patate lesse, Pancetta e Grana", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., patate lesse, pancetta e grana"},
+
+            
+
+
+
+
+
             {name: "Cavallina (Sfilacci)", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz., sfilacci di cavallo"},
             {name: "Preferita", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., scamorza, misto bosco, rucola, prosc. cotto, sal. picc."}
         ];
@@ -241,7 +263,17 @@ function openMenu(type) {
     } else if (type === "Pizza con noci") {
         title.innerText = "Pizza con noci";
         items = [
-            {name: "Noci, Gorgonzola e Speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"}
+            {name: "Noci, Gorgonzola e Speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, gorgonzola, speck"},
+
+            
+            {name: "Noci, Brie, crudo o speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, brie crudo o speck"},
+            {name: "Noci, melanzane e gorgonzola", priceN: "€9.00", priceM: "€18,00", ingredients: "pom., mozz.,noci melanzane e gorgonzola"},
+            {name: "Noci, salsiccia, salamio, grana", priceN: "€9.", priceM: "€18,00", ingredients: "pom., mozz., noci, salsiccia, sal. picc., grana"},
+            {name: "Noci, Gorgonzola, Gomodori secchi", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz., noci, gorgonzola, pomodori secchi"},
+            {name: "Noci, Brie, Rucola, Grana", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz., noci, noci, brie, rucola, grana"},
+            {name: "Noci, Porcini, Gorgonzola", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, porcini, gorgonzola"},
+            {name: "Noci, Misto bosco, Gorgonzola", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz.,  noci, misto bosco, gorgonzola"}
+
         ];
         
     } else if (type === "patatine") {
@@ -260,6 +292,21 @@ function openMenu(type) {
             {name: "Mortadellona", priceN: "€11,00", priceM: "N/A", ingredients: "provola, pesto pistacchio, mortadella, granella"},
             {name: "Burratina", priceN: "€10.50", priceM: "N/A", ingredients: "mozz., prosciutto crudo, rucola, burrata"},
             {name: "Friarielli", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., friarielli, salsiccia"},
+
+            {name: "Zucca", priceN: "€9.50", priceM: "N/A", ingredients: "mozz., Crema di zucca , speck e porcini "},
+            {name: "Zuccariella", priceN: "€11.00", priceM: "N/A", ingredients: "mozz., Crema di zucca , mortadella , straccetella , granella di pistacchio"},
+            {name: "Biancarosa ", priceN: "€7.50", priceM: "N/A", ingredients: "mozz., friarielli, salsiccia"},
+            {name: "Valentina", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., bersaola, porcini, carciofi"},
+            {name: "Pompeiana", priceN: "€9,50", priceM: "N/A", ingredients: " mozz, spinaci, porcini, salamino piccante"},
+            {name: "Stracchinella ", priceN: "€8,00", priceM: "N/A", ingredients: "mozz, stracchino, pomodorini in cottura, rosmarino"},
+            {name: "Miss Pizza", priceN: "€9,00", priceM: "N/A", ingredients: "mozz, ricotta, stracchino, carciofi, pomodorini in cottura"},
+            {name: "Sfilacciata ", priceN: "€11,00", priceM: "N/A", ingredients: "mozz, asiago, sesamo, sfilacci di cavallo"},
+            {name: "Tarantella", priceN: "7.50", priceM: "N/A", ingredients: "mozz., mozz bufala, pomodorini in cottura"},
+
+            
+
+
+
             {name: "Emiliana", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., spinaci, porchetta, porcini, grana"}
         ];
     } else if (type === "calzoni") {
