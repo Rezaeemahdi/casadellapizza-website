@@ -401,14 +401,10 @@ panel.classList.add("active");
 
 }
 
-    function closeMenu() {
-        const panel = document.getElementById('menu-panel');
-        panel.style.display = 'none'; 
-        // If you use a class for animations, make sure it also sets display: none at the end
-        document.body.classList.remove("modal-open");
-    }
-
-
+function closeMenu() {
+    document.getElementById('menu-panel').classList.remove("active");
+    document.body.classList.remove("modal-open");
+}
 
 /* ===================================================== */
 /* SHOPPING CART SYSTEM                                  */
@@ -564,14 +560,10 @@ document.body.classList.add("modal-open");
 
 /* Close cart popup */
 
-function closeCart(){
-
-document.getElementById("cart-window").classList.remove("active")
-// UNFREEZE BACKGROUND
-document.body.classList.remove("modal-open");
+function closeCart() {
+    document.getElementById("cart-window").classList.remove("active");
+    document.body.classList.remove("modal-open");
 }
-
-
 
 /* ===================================================== */
 /* ORDER CONFIRMATION                                    */
@@ -607,13 +599,11 @@ function closeConfirmation() {
     document.getElementById("order-confirmation").classList.remove("active");
     
     // Only remove modal-open if the Cart window is ALSO closed.
-    // If you return to the cart, keep it frozen.
     const cartActive = document.getElementById("cart-window").classList.contains("active");
     if (!cartActive) {
         document.body.classList.remove("modal-open");
     }
 }
-
 
 
 /* ===================================================== */
@@ -880,17 +870,14 @@ document.addEventListener("DOMContentLoaded", function(){
     
     
     function closeSuccess(){
-
-        /* 1. Close ALL popups */
+        /* 1. Close ALL popups and remove active classes */
         document.getElementById("order-success").classList.remove("active");
         document.getElementById("order-confirmation").classList.remove("active");
         document.getElementById("cart-window").classList.remove("active");
         
-        
         /* 2. Clear cart */
         cart = [];
         updateCart();
-        
         
         /* 3. Reset form fields */
         document.getElementById("customer-name").value = "";
@@ -900,39 +887,36 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("order-note").value = "";
         document.getElementById("order-time").value = "";
         
-        
         /* 4. Reset order type to Pickup */
         setOrderType("pickup");
         
-        
-        /* 5. Reset contact form (important) */
+        /* 5. Reset contact form */
         const contactForm = document.getElementById("contact-form");
         if(contactForm){
-        contactForm.reset();
+            contactForm.reset();
         }
-        
         
         /* 6. Reset order summary */
         document.getElementById("order-summary").innerHTML = "";
         document.getElementById("confirmation-summary").innerHTML = "";
         
+        /* 7. Unfreeze background */
+        setTimeout(() => {
+            document.body.classList.remove("modal-open");
+        }, 300);
         
-        /* 7. Scroll to top smoothly */
+        /* 8. Scroll to top smoothly */
         window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+            top: 0,
+            behavior: "smooth"
         });
         
-        
-        /* 8. Small animation feedback (optional but nice) */
+        /* 9. Small animation feedback */
         document.body.classList.add("reset-flash");
-        
         setTimeout(()=>{
-        document.body.classList.remove("reset-flash");
-        },300);
-        
-        }
-        
+            document.body.classList.remove("reset-flash");
+        }, 300);
+    }
 
 
     
@@ -1039,14 +1023,12 @@ window.addEventListener("scroll", () => {
 /* CUSTOM PIZZA BUILDER LOGIC                            */
 /* ===================================================== */
 
-// Open the custom pizza modal
 function openCustomPizza() {
     document.getElementById('custom-pizza-panel').classList.add("active");
     document.body.classList.add("modal-open");
-    updateCustomPrice(); // Set initial price to Margherita
+    updateCustomPrice(); 
 }
 
-// Close the custom pizza modal
 function closeCustomPizza() {
     document.getElementById('custom-pizza-panel').classList.remove("active");
     document.body.classList.remove("modal-open");
