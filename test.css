@@ -1620,3 +1620,25 @@ font-size:16px !important;
 
 
 
+
+
+/* ===================================================== */
+/* 🚨 THE ULTIMATE GHOST FIX (OVERRIDES EVERYTHING) 🚨   */
+/* ===================================================== */
+.menu-panel:not(.active),
+#custom-pizza-panel:not(.active),
+.cart-window:not(.active),
+.order-confirmation:not(.active) {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -100 !important;
+}
+
+/* Ensure the white boxes inside don't capture clicks either */
+.menu-panel:not(.active) .menu-panel-content,
+#custom-pizza-panel:not(.active) .menu-panel-content {
+    pointer-events: none !important;
+    display: none !important;
+}
