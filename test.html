@@ -169,6 +169,10 @@
         
             <div class="section-content">
                 <ul class="menu-list">
+                    <li class="menu-item" onclick="openCustomPizza()">
+                        <img src="crea.png" alt="Crea la tua pizza" class="menu-image">
+                        <h3 class="name" data-en="Build Your Own" data-it="Crea la tua Pizza">Crea la tua Pizza</h3>
+                    </li>
                     <li class="menu-item" onclick="openMenu('traditional')">
                         <img src="traditional.PNG" alt="Traditional pizza" class="menu-image">
                         <h3 class="name" data-en="Traditional Pizza" data-it="Pizza Tradizionale">Traditional Pizza</h3>
@@ -479,7 +483,279 @@
             <ul id="panel-list"></ul>
     
         </div>
-    
+    </div>
+
+          
+    <div id="custom-pizza-panel" class="menu-panel" onclick="closeCustomPizza()">
+        <div class="menu-panel-content" onclick="event.stopPropagation()">
+            <span class="close-panel" onclick="closeCustomPizza()">&times;</span>
+            <h2 id="custom-panel-title" data-en="Build Your Own Pizza" data-it="Crea la tua Pizza">Crea la tua Pizza</h2>
+
+            <div class="custom-pizza-form">
+                
+                <h4 data-en="1. Choose your base" data-it="1. Scegli la base">1. Scegli la base</h4>
+                <div class="ingredient-group">
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="radio" name="pizza-base" value="5.50" data-name="Base Margherita" checked onchange="updateCustomPrice()"> Margherita</div>
+                        <div class="ing-price">€5.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="radio" name="pizza-base" value="5.00" data-name="Base Marinara" onchange="updateCustomPrice()"> Marinara</div>
+                        <div class="ing-price">€5.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="radio" name="pizza-base" value="5.00" data-name="Base Mozzarella" onchange="updateCustomPrice()"> Mozzarella</div>
+                        <div class="ing-price">€5.50</div>
+                    </label>
+                </div>
+
+                <h4 data-en="2. Cheeses" data-it="2. Formaggi">2. Formaggi</h4>
+                <div class="ingredient-group">
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Gorgonzola" onchange="updateCustomPrice()"> Gorgonzola</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Grana a scaglie" onchange="updateCustomPrice()"> Grana a scaglie</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Ricotta" onchange="updateCustomPrice()"> Ricotta</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Brie" onchange="updateCustomPrice()"> Brie</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Provola Affumicata" onchange="updateCustomPrice()"> Provola Affumicata</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Scamorza" onchange="updateCustomPrice()"> Scamorza</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Burrata" onchange="updateCustomPrice()"> Burrata</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Asiago" onchange="updateCustomPrice()"> Asiago</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Mozzarella di Bufala" onchange="updateCustomPrice()"> Mozzarella di Bufala</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Emmental" onchange="updateCustomPrice()"> Emmental</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Stracciatella" onchange="updateCustomPrice()"> Stracciatella</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Stracchino" onchange="updateCustomPrice()"> Stracchino</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                </div>
+
+                <h4 data-en="3. Meats & Seafood" data-it="3. Salumi e Pesce">3. Salumi e Pesce</h4>
+                <div class="ingredient-group">
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Prosciutto Cotto" onchange="updateCustomPrice()"> Prosciutto Cotto</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Prosciutto Crudo" onchange="updateCustomPrice()"> Prosciutto Crudo</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Salsiccia" onchange="updateCustomPrice()"> Salsiccia</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Salamino Piccante" onchange="updateCustomPrice()"> Salamino Piccante</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Pancetta" onchange="updateCustomPrice()"> Pancetta</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Speck" onchange="updateCustomPrice()"> Speck</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Porchetta" onchange="updateCustomPrice()"> Porchetta</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Wurstel" onchange="updateCustomPrice()"> Wurstel</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Bresaola" onchange="updateCustomPrice()"> Bresaola</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Sfilacci di Cavallo" onchange="updateCustomPrice()"> Sfilacci di Cavallo</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Mortadella" onchange="updateCustomPrice()"> Mortadella</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Tonno" onchange="updateCustomPrice()"> Tonno</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Acciughe" onchange="updateCustomPrice()"> Acciughe</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.50" data-name="Gamberetti" onchange="updateCustomPrice()"> Gamberetti</div>
+                        <div class="ing-price">+€2.50</div>
+                    </label>
+                </div>
+
+                <h4 data-en="4. Veggies & Extras" data-it="4. Verdure e Altro">4. Verdure e Altro</h4>
+                <div class="ingredient-group">
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Funghi Champignon" onchange="updateCustomPrice()"> Funghi Champignon</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Porcini" onchange="updateCustomPrice()"> Porcini</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Misto Bosco" onchange="updateCustomPrice()"> Misto Bosco</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Melanzane" onchange="updateCustomPrice()"> Melanzane</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Zucchine" onchange="updateCustomPrice()"> Zucchine</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Cipolla Rossa" onchange="updateCustomPrice()"> Cipolla Rossa</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Peperoni" onchange="updateCustomPrice()"> Peperoni</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Carciofi" onchange="updateCustomPrice()"> Carciofi</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Rucola" onchange="updateCustomPrice()"> Rucola</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Pomodorini" onchange="updateCustomPrice()"> Pomodorini</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Asparagi" onchange="updateCustomPrice()"> Asparagi</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Radicchio" onchange="updateCustomPrice()"> Radicchio</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Spinaci" onchange="updateCustomPrice()"> Spinaci</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Olive Nere" onchange="updateCustomPrice()"> Olive Nere</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Capperi" onchange="updateCustomPrice()"> Capperi</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Patatine Fritte" onchange="updateCustomPrice()"> Patatine Fritte</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.50" data-name="Patate Lesse" onchange="updateCustomPrice()"> Patate Lesse</div>
+                        <div class="ing-price">+€1.50</div>
+                    </label>
+                   
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Noci" onchange="updateCustomPrice()"> Noci</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Pomodori Secchi" onchange="updateCustomPrice()"> Pomodori Secchi</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Pesto" onchange="updateCustomPrice()"> Pesto</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Crema di Zucca" onchange="updateCustomPrice()"> Crema di Zucca</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="1.00" data-name="Uovo" onchange="updateCustomPrice()"> Uovo</div>
+                        <div class="ing-price">+€1.00</div>
+                    </label>
+
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Friarielli" onchange="updateCustomPrice()"> Friarielli</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Aglio" onchange="updateCustomPrice()"> Aglio</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Origano" onchange="updateCustomPrice()"> Origano</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Peperoncino / Olio Piccante" onchange="updateCustomPrice()"> Peperoncino / Olio Piccante</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="2.00" data-name="Granella di Pistacchio" onchange="updateCustomPrice()"> Granella di Pistacchio</div>
+                        <div class="ing-price">+€2.00</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Salsa Rosa" onchange="updateCustomPrice()"> Salsa Rosa</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Rosmarino" onchange="updateCustomPrice()"> Rosmarino</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                    <label class="custom-ingredient">
+                        <div class="ing-name"><input type="checkbox" class="pizza-topping" value="0.50" data-name="Sesamo" onchange="updateCustomPrice()"> Sesamo</div>
+                        <div class="ing-price">+€0.50</div>
+                    </label>
+                </div>
+
+                <div class="custom-total-area" style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-weight: bold; font-size: 1.2rem; text-align: right;">
+                    <span data-en="Total:" data-it="Totale:">Totale:</span> €<span id="custom-pizza-total">5.50</span>
+                </div>
+
+                <button class="add-btn" style="margin-top: 15px; width: 100%; justify-content: center; font-size: 1rem; padding: 12px;" onclick="addCustomPizzaToCart()">
+                    <span data-en="Add to Cart" data-it="Aggiungi al Carrello">Aggiungi al Carrello</span>
+                </button>
+            </div>
+        </div>
     </div>
     
     </div>

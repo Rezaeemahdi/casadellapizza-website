@@ -313,7 +313,9 @@ function openMenu(type) {
         title.innerText = "Calzoni e Baguette";
         items = [
             {name: "Calzone Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "pom., mozz., prosc. cotto, funghi"},
-            {name: "Calzone Ricotta e Spinaci", priceN: "€8.50", priceM: "N/A", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
+            {name: "Calzone Verdure", priceN: "€8,50", priceM: "N/A", ingredients: "pom., mozz., Verdure di stagione "},
+            {name: "Calzone  Crudo o Speck con Rucola e Brie", priceN: "€9,00", priceM: "N/A", ingredients: "pom., mozz.,  (Crudo o Speck) con Rucola e (Brie o Grana)"},
+            {name: "Calzone Ricotta, Spinaci e Gorgonzola", priceN: "€9.00", priceM: "N/A", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
             {name: "Baguette Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "mozz., prosciutto cotto, funghi"},
             {name: "Baguette Speck, Rucola e Brie", priceN: "€8.50", priceM: "N/A", ingredients: "mozz., speck, rucola, brie"}
         ];
@@ -342,10 +344,10 @@ else if (type === "Drinks / Bevande") {
         {name: "Coca Cola Zero", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl)"},
         {name: "Fanta", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
         {name: "Sprite", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
-        {name: " Estathé", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
+        {name: " Té freddo", priceN: "€2.50", priceM: "N/A", ingredients: "Bibite in Lattina (33cl) "},
         {name: "Tenet's", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
         {name: "Becks", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
-        {name: "Heineken", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
+       
         {name: "Corona", priceN: "€3,00", priceM: "N/A", ingredients: "Birra in Bottiglia  (33cl)"},
         {name: "Moretti", priceN: "€3.50", priceM: "N/A", ingredients: "Birra in Bottiglia (66cl)"},
         {name: "Peroni", priceN: "€3.50", priceM: "N/A", ingredients: " Birra in Bottiglia (66cl)"}
@@ -1031,5 +1033,80 @@ window.addEventListener("scroll", () => {
 
 
 
-    
+////////////////////////////////////////////////////////////////////////////////////////////////////   
 
+/* ===================================================== */
+/* CUSTOM PIZZA BUILDER LOGIC                            */
+/* ===================================================== */
+
+// Open the custom pizza modal
+function openCustomPizza() {
+    document.getElementById('custom-pizza-panel').classList.add("active");
+    document.body.classList.add("modal-open");
+    updateCustomPrice(); // Set initial price to Margherita
+}
+
+// Close the custom pizza modal
+function closeCustomPizza() {
+    document.getElementById('custom-pizza-panel').classList.remove("active");
+    document.body.classList.remove("modal-open");
+}
+
+// Calculate price dynamically
+function updateCustomPrice() {
+    let total = 0;
+    
+    // Add base price
+    const bases = document.getElementsByName('pizza-base');
+    bases.forEach(base => {
+        if (base.checked) total += parseFloat(base.value);
+    });
+
+    // Add toppings price
+    const toppings = document.querySelectorAll('.pizza-topping');
+    toppings.forEach(topping => {
+        if (topping.checked) total += parseFloat(topping.value);
+    });
+
+    // Update the UI
+    document.getElementById('custom-pizza-total').innerText = total.toFixed(2);
+}
+
+// Add the created pizza to the existing cart
+function addCustomPizzaToCart() {
+    let baseName = "";
+    const bases = document.getElementsByName('pizza-base');
+    bases.forEach(base => {
+        if (base.checked) baseName = base.getAttribute('data-name');
+    });
+
+    let selectedToppings = [];
+    const toppings = document.querySelectorAll('.pizza-topping');
+    toppings.forEach(topping => {
+        if (topping.checked) selectedToppings.push(topping.getAttribute('data-name'));
+    });
+
+    // Format the final name string
+    let finalName = "Crea la tua: " + baseName;
+    if (selectedToppings.length > 0) {
+        finalName += " + " + selectedToppings.join(", ");
+    }
+
+    // Format price for your existing cart function
+    let finalPriceStr = "€" + document.getElementById('custom-pizza-total').innerText;
+
+    // Push to your existing cart system!
+    addToCart(finalName, finalPriceStr, "Normale");
+
+    // Close and reset
+    closeCustomPizza();
+    resetCustomPizzaForm();
+}
+
+// Reset form for the next time they open it
+function resetCustomPizzaForm() {
+    document.getElementsByName('pizza-base')[0].checked = true; // Reset to Margherita
+    const toppings = document.querySelectorAll('.pizza-topping');
+    toppings.forEach(topping => topping.checked = false); // Uncheck all
+    updateCustomPrice();
+}
