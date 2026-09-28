@@ -586,6 +586,9 @@ summaryHTML+=`<br><strong>Total: €${total.toFixed(2)}</strong>`
 
 summaryBox.innerHTML=summaryHTML
 
+const isDelivery = document.getElementById("order-type").value === "delivery"
+document.getElementById("confirmation-delivery-notice").style.display = isDelivery ? "block" : "none"
+
 document.getElementById("order-confirmation").classList.add("active")
 // ENSURE BACKGROUND IS FROZEN
 document.body.classList.add("modal-open");
@@ -644,7 +647,8 @@ function sendWhatsAppOrder(){
     doorbell: "Doorbell",
     note: "Note",
     pickup: "Pickup",
-    delivery: "Delivery"
+    delivery: "Delivery",
+    deliveryFee: "Delivery fee not included in the total" 
     },
     it: {
     title: "Ordine Casa Della Pizza",
@@ -657,7 +661,8 @@ function sendWhatsAppOrder(){
     doorbell: "Campanello",
     note: "Nota",
     pickup: "Ritiro",
-    delivery: "Consegna"
+    delivery: "Consegna",
+    deliveryFee: "Costo di consegna non incluso nel totale"
     }
     };
     
@@ -702,6 +707,7 @@ function sendWhatsAppOrder(){
     // If it's delivery, check for address
     if (orderType === "delivery" && !address) {
         alert("Per favore inserisci l'indirizzo per la consegna. / Please enter the delivery address.");
+        message += ` *${t.deliveryFee}*%0A`;
         return; // Stops the function
     }
 
@@ -826,12 +832,14 @@ if(type==="pickup"){
 pickupBtn.classList.add("order-btn-active")
 document.getElementById("address-field").style.display="none"
 document.getElementById("doorbell-field").style.display="none"
+document.getElementById("delivery-notice").style.display="none"
 
 }else{
 
 deliveryBtn.classList.add("order-btn-active")
 document.getElementById("address-field").style.display="block"
 document.getElementById("doorbell-field").style.display="block"
+document.getElementById("delivery-notice").style.display="block"
 
 
 }

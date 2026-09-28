@@ -1610,7 +1610,15 @@ font-size:16px !important;
                 }          
 
 
-        
+                .delivery-notice {
+                  background: #fff4e0;
+                  border-left: 4px solid #e67e22;
+                  color: #5a3b00;
+                  padding: 10px 12px;
+                  margin: 10px 0;
+                  border-radius: 6px;
+                  font-size: 0.9rem;
+                }
              
 
 
