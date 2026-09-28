@@ -295,7 +295,7 @@ function openMenu(type) {
 
             {name: "Zucca", priceN: "€9.50", priceM: "N/A", ingredients: "mozz., Crema di zucca , speck e porcini "},
             {name: "Zuccariella", priceN: "€11.00", priceM: "N/A", ingredients: "mozz., Crema di zucca , mortadella , straccetella , granella di pistacchio"},
-            {name: "Biancarosa ", priceN: "€7.50", priceM: "N/A", ingredients: "mozz., friarielli, salsiccia"},
+            {name: "Biancarosa ", priceN: "€7.50", priceM: "N/A", ingredients: "mozz., Gamberetti, Salsa Rosa"},
             {name: "Valentina", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., bersaola, porcini, carciofi"},
             {name: "Pompeiana", priceN: "€9,50", priceM: "N/A", ingredients: " mozz, spinaci, porcini, salamino piccante"},
             {name: "Stracchinella ", priceN: "€8,00", priceM: "N/A", ingredients: "mozz, stracchino, pomodorini in cottura, rosmarino"},
