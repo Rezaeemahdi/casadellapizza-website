@@ -182,13 +182,13 @@ function openMenu(type) {
 
             {name: "Gamberetti ", priceN: "€8.00", priceM: "€16,00", ingredients: "pom., mozz., porcini"},
             {name: "Gamberetti e salsa rosa ", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz., Gamberetti e salsa rosa  "},
-            {name: "Gamberetti e zuchinne ", priceN: "€8.80", priceM: "€17,40", ingredients: "pom., mozz.,Gamberetti e zuchinne "},
+            {name: "Gamberetti e zuchinne ", priceN: "€8.80", priceM: "€17.40", ingredients: "pom., mozz.,Gamberetti e zuchinne "},
 
             {name: "Pesto, Salamino, Grana", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz.,pesto, sal. picc., grana"},
             {name: "Pesto, Salsiccia e Melanzane", priceN: "€8.50", priceM: "€17,00", ingredients: "pom., mozz.,pesto, salsiccia e melanzane"},
             
 
-            {name: "Pesto, Rucola, Grana, Pomodorini", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz.,rucola, grana, pomodorini"},
+            {name: "Pesto, Rucola, Grana, Pomodorini", priceN: "€8.80", priceM: "€17.60", ingredients: "pom., mozz.,rucola, grana, pomodorini"},
             
             {name: "Patate lesse e Gorgonzola", priceN: "€7.00", priceM: "€14,00", ingredients: "pom., mozz.,patate lesse gorgonzola"},
             {name: "Patate lesse e Salamino", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz.,patate lesse salamino piccante"},
@@ -210,7 +210,7 @@ function openMenu(type) {
             {name: "Bufala", priceN: "€6.50", priceM: "€13,00", ingredients: "pom., mozz. di bufala (FDL)"},
             {name: "Bufala e Acciughe", priceN: "€7,00", priceM: "€14,00", ingredients: "pom., mozz. di bufala (FDL), acciughe"},
             {name: "Bufala e Salamino", priceN: "€7.50", priceM: "€15,00", ingredients: "pom., mozz. di bufala (FDL), salamino piccante"},
-            {name: "Bufalalina", priceN: "€8,80", priceM: "€17,40", ingredients: "mozz. di bufala (FDL), pomodorini, pesto"},
+            {name: "Bufalalina", priceN: "€8.80", priceM: "€17.40", ingredients: "mozz. di bufala (FDL), pomodorini, pesto"},
             {name: "Pomodorini, Rucola e Grana", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz. di bufala (FDL), pomodorini, rucola, grana"},
             {name: "Bufala e Verdure", priceN: "€9,00", priceM: "€18,00", ingredients: "pom., mozz. di bufala (FDL), verdure di stagione"}
         ];
@@ -268,7 +268,7 @@ function openMenu(type) {
             
             {name: "Noci, Brie, crudo o speck", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, brie crudo o speck"},
             {name: "Noci, melanzane e gorgonzola", priceN: "€9.00", priceM: "€18,00", ingredients: "pom., mozz.,noci melanzane e gorgonzola"},
-            {name: "Noci, salsiccia, salamio, grana", priceN: "€9.", priceM: "€18,00", ingredients: "pom., mozz., noci, salsiccia, sal. picc., grana"},
+            {name: "Noci, salsiccia, salamio, grana", priceN: "€9.00", priceM: "€18,00", ingredients: "pom., mozz., noci, salsiccia, sal. picc., grana"},
             {name: "Noci, Gorgonzola, Gomodori secchi", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz., noci, gorgonzola, pomodori secchi"},
             {name: "Noci, Brie, Rucola, Grana", priceN: "€8.80", priceM: "€17,60", ingredients: "pom., mozz., noci, noci, brie, rucola, grana"},
             {name: "Noci, Porcini, Gorgonzola", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., noci, porcini, gorgonzola"},
@@ -280,7 +280,7 @@ function openMenu(type) {
         title.innerText = "Pizze con Patatine Fritte";
         items = [
             {name: "Patatosa", priceN: "€6.80", priceM: "€13.60", ingredients: "pom., mozz., patatine fritte"},
-            {name: "Patate e Wurstel", priceN: "€8", priceM: "€16", ingredients: "pom., mozz., patatine fritte, wurstel"},
+            {name: "Patate e Wurstel", priceN: "€8.00", priceM: "€16.00", ingredients: "pom., mozz., patatine fritte, wurstel"},
             {name: "Patate e Salsiccia", priceN: "€8.50", priceM: "€16.50", ingredients: "pom., mozz., patatine fritte, salsiccia"},
             {name: "Patate e Salamino", priceN: "€8.50", priceM: "€16.50", ingredients: "pom., mozz., patatine fritte, salamino"},
             {name: "Patate e Pancetta", priceN: "€9.50", priceM: "€19,00", ingredients: "pom., mozz., patatine fritte, pancetta"}
@@ -297,7 +297,7 @@ function openMenu(type) {
             {name: "Zuccariella", priceN: "€11.00", priceM: "N/A", ingredients: "mozz., Crema di zucca , mortadella , straccetella , granella di pistacchio"},
             {name: "Biancarosa ", priceN: "€7.50", priceM: "N/A", ingredients: "mozz., Gamberetti, Salsa Rosa"},
             {name: "Valentina", priceN: "€10,00", priceM: "N/A", ingredients: "mozz., bersaola, porcini, carciofi"},
-            {name: "Pompeiana", priceN: "€9,50", priceM: "N/A", ingredients: " mozz, spinaci, porcini, salamino piccante"},
+            {name: "Pompeiana", priceN: "€9.50", priceM: "N/A", ingredients: " mozz, spinaci, porcini, salamino piccante"},
             {name: "Stracchinella ", priceN: "€8,00", priceM: "N/A", ingredients: "mozz, stracchino, pomodorini in cottura, rosmarino"},
             {name: "Miss Pizza", priceN: "€9,00", priceM: "N/A", ingredients: "mozz, ricotta, stracchino, carciofi, pomodorini in cottura"},
             {name: "Sfilacciata ", priceN: "€11,00", priceM: "N/A", ingredients: "mozz, asiago, sesamo, sfilacci di cavallo"},
@@ -313,7 +313,7 @@ function openMenu(type) {
         title.innerText = "Calzoni e Baguette";
         items = [
             {name: "Calzone Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "pom., mozz., prosc. cotto, funghi"},
-            {name: "Calzone Verdure", priceN: "€8,50", priceM: "N/A", ingredients: "pom., mozz., Verdure di stagione "},
+            {name: "Calzone Verdure", priceN: "€8.50", priceM: "N/A", ingredients: "pom., mozz., Verdure di stagione "},
             {name: "Calzone  Crudo o Speck con Rucola e Brie", priceN: "€9,00", priceM: "N/A", ingredients: "pom., mozz.,  (Crudo o Speck) con Rucola e (Brie o Grana)"},
             {name: "Calzone Ricotta, Spinaci e Gorgonzola", priceN: "€9.00", priceM: "N/A", ingredients: "pom., mozz., ricotta, spinaci, gorgonzola"},
             {name: "Baguette Prosciutto e Funghi", priceN: "€8,00", priceM: "N/A", ingredients: "mozz., prosciutto cotto, funghi"},
@@ -326,8 +326,8 @@ function openMenu(type) {
             {name: "Chicken Nuggets ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
             {name: "Mozzerella Sticks ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
             {name: "Onion Rings ", priceN: "€5.50", priceM: "N/A", ingredients: "(6 pezzi)"},
-            {name: "Patatine Dippers", priceN: "€4.5", priceM: "€8", ingredients: "Normale : 200g , Maxi : 400g"},
-            {name: "Patatine Fritte", priceN: "€3", priceM: "€5", ingredients: "Normale : 200g , Maxi : 400g"},
+            {name: "Patatine Dippers", priceN: "€4.5", priceM: "€8.00", ingredients: "Normale : 200g , Maxi : 400g"},
+            {name: "Patatine Fritte", priceN: "€3.00", priceM: "€5.00", ingredients: "Normale : 200g , Maxi : 400g"},
         ];
     }else if (type === "Kebab") {
     title.innerText = "Kebab";
